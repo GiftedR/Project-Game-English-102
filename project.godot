@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Project Game English 102"
+config/description="Game for the English 102 Project"
+config/version="0.0.1-ea"
+run/main_scene="uid://d0h8fdqhu1akt"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://Collections/c_Root/icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1600
+window/size/window_height_override=900
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://Files/": "red"
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

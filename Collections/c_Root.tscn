@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0h8fdqhu1akt"]
+
+[ext_resource type="Script" uid="uid://ctr2m6ablf3ya" path="res://Collections/c_Root/Root.gd" id="1_6usk6"]
+
+[node name="nde_Root" type="Node"]
+script = ExtResource("1_6usk6")
