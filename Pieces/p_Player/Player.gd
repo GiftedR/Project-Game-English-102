@@ -2,7 +2,6 @@ extends Entity
 class_name Player
 
 func _enter_tree() -> void:
-	print("Ply Called")
 	if _controller == null:
 		_controller = PlayerController.new()\
 			.with_name("Player Controller")
