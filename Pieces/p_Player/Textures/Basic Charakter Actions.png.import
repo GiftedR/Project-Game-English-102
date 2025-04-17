@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sb78eusoxos5"
-path="res://.godot/imported/Tools.png-53a508d10952d4883e412b849d684be8.ctex"
+uid="uid://dy086us70eac2"
+path="res://.godot/imported/Basic Charakter Actions.png-4a41cbac553e114ab4d436b28d541269.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Files/Sprout Lands - Sprites - Basic pack/Characters/Tools.png"
-dest_files=["res://.godot/imported/Tools.png-53a508d10952d4883e412b849d684be8.ctex"]
+source_file="res://Pieces/p_Player/Textures/Basic Charakter Actions.png"
+dest_files=["res://.godot/imported/Basic Charakter Actions.png-4a41cbac553e114ab4d436b28d541269.ctex"]
 
 [params]
 
