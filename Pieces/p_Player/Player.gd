@@ -1,6 +1,11 @@
 extends Entity
 class_name Player
 
+static var instance:Player
+
+func _init() -> void:
+	instance = self
+
 func _enter_tree() -> void:
 	if _controller == null:
 		_controller = PlayerController.new()\

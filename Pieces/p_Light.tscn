@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtq2trj73qsrh"]
+
+[ext_resource type="Texture2D" uid="uid://du0oxm4edj0ie" path="res://Collections/c_World/Interiors_free_16x16.png" id="1_jcgy3"]
+
+[sub_resource type="Gradient" id="Gradient_jcgy3"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s1u4a"]
+gradient = SubResource("Gradient_jcgy3")
+width = 384
+height = 384
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="nde2_Light" type="Node2D"]
+
+[node name="spe2_Light" type="Sprite2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(0, -7)
+texture = ExtResource("1_jcgy3")
+region_enabled = true
+region_rect = Rect2(224, 912, 16, 32)
+
+[node name="plt2_Light" type="PointLight2D" parent="."]
+color = Color(1, 0.964706, 0.929412, 1)
+energy = 0.6
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_s1u4a")

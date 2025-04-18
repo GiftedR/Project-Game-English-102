@@ -23,7 +23,7 @@ func _init() -> void:
 	instance = self
 
 func _enter_tree() -> void:
-	add_child(Player.spawn().with_character("Amelia"))
+	add_child(Player.spawn().with_character("Bob").with_starting_location(Vector2(50, 394)))
 
 static func build() -> World:
 	return load("res://Collections/c_World.tscn").instantiate()

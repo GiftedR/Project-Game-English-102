@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://byuk1bhvscowb"]
+
+[ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="1_5gwtd"]
+[ext_resource type="Script" uid="uid://qt610ahban13" path="res://Pieces/p_Action_Board/ActionBoard.gd" id="1_mbagx"]
+
+[sub_resource type="Theme" id="Theme_x6w1m"]
+default_font = ExtResource("1_5gwtd")
+
+[node name="cvl2_Action_Board" type="CanvasLayer"]
+script = ExtResource("1_mbagx")
+
+[node name="ctr2_Action_Board" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_x6w1m")
+
+[node name="clr2_BG" type="ColorRect" parent="ctr2_Action_Board"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="mgc2_Actions" type="MarginContainer" parent="ctr2_Action_Board"]
+layout_mode = 2
+offset_right = 320.0
+offset_bottom = 180.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ctr2_Action_Board/mgc2_Actions"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="lbl2_Action_Title" type="Label" parent="ctr2_Action_Board/mgc2_Actions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Action Title (:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="plc2_Actions" type="PanelContainer" parent="ctr2_Action_Board/mgc2_Actions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="hbc2_Window_Controls" type="HBoxContainer" parent="ctr2_Action_Board/mgc2_Actions/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="btn2_Confirm" type="Button" parent="ctr2_Action_Board/mgc2_Actions/VBoxContainer/hbc2_Window_Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Confirm"
+
+[node name="btn2_Cancel" type="Button" parent="ctr2_Action_Board/mgc2_Actions/VBoxContainer/hbc2_Window_Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel"

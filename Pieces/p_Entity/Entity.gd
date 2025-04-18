@@ -13,6 +13,8 @@ const skins:Array[String] = [
 	"res://Pieces/p_Entity/Bob/Bob_16x16.png"
 ]
 
+var starting_location:Vector2 = Vector2.ZERO
+
 var current_skin:int = 0
 var set_skin:int = 0
 
@@ -27,9 +29,14 @@ func _enter_tree() -> void:
 	
 	add_child(_controller)
 
+func _ready() -> void:
+	position = starting_location
+
 func _physics_process(delta: float) -> void:
+	if _controller.is_busy:
+		return
 	velocity = velocity.move_toward(
-		_controller.move_direction * _controller.max_speed, 
+		_controller.move_direction * _controller.max_speed * (2 if _controller.is_sprinting else 1), 
 		delta * _controller.acceleration
 	)
 
@@ -66,6 +73,10 @@ static func Bob() -> Entity:
 
 #region Builder
 
+func with_busy(isbusy:bool = true) -> Entity:
+	_controller.is_busy = isbusy
+	return self
+
 func with_character(charactername:String) -> Entity:
 	return self.with_skin(charactername).with_character_name(charactername)
 
@@ -83,6 +94,10 @@ func with_name(newname:String) -> Entity:
 func with_name_addition(addition:String) -> Entity:
 	name += addition
 	_name = name
+	return self
+
+func with_starting_location(location:Vector2) -> Entity:
+	starting_location = location
 	return self
 
 func with_skin(skinname:String = "Adam") -> Entity:

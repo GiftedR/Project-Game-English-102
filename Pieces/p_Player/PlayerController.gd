@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	move_direction = Input.get_vector("ply_left", "ply_right", "ply_up", "ply_down")
+	is_sprinting = Input.get_action_strength("ply_sprint") > 0
 	# super._physics_process(delta)
 
 func _set_camera_limits() -> void:

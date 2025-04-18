@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0hjo0ni427dp"]
+
+[ext_resource type="Texture2D" uid="uid://du0oxm4edj0ie" path="res://Collections/c_World/Interiors_free_16x16.png" id="1_v3re0"]
+
+[sub_resource type="Gradient" id="Gradient_e8mge"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u51vc"]
+gradient = SubResource("Gradient_e8mge")
+width = 384
+height = 384
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v3re0"]
+radius = 3.0
+height = 16.0
+
+[node name="stb2_Lamp" type="StaticBody2D"]
+
+[node name="spe2_Lamp" type="Sprite2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(0, -14)
+texture = ExtResource("1_v3re0")
+region_enabled = true
+region_rect = Rect2(192, 848, 16, 48)
+
+[node name="plt2_Lamp" type="PointLight2D" parent="."]
+position = Vector2(0, -23)
+color = Color(1, 0.964706, 0.929412, 1)
+energy = 0.6
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_u51vc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v3re0")
