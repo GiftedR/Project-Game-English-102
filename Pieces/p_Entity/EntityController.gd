@@ -8,6 +8,7 @@ var acceleration:float = max_speed * 8
 
 var move_direction:Vector2 = Vector2.ZERO
 var is_sprinting:bool = false
+var is_interacting:bool = false
 
 func with_name(newname:String) -> EntityController:
 	name = newname

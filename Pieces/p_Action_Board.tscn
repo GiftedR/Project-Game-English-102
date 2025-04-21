@@ -1,10 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://byuk1bhvscowb"]
+[gd_scene load_steps=9 format=3 uid="uid://byuk1bhvscowb"]
 
 [ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="1_5gwtd"]
 [ext_resource type="Script" uid="uid://qt610ahban13" path="res://Pieces/p_Action_Board/ActionBoard.gd" id="1_mbagx"]
+[ext_resource type="Texture2D" uid="uid://cce5qtn30fjhl" path="res://Pieces/p_Action_Board/PanelFocus.png" id="2_mn6pm"]
+[ext_resource type="Texture2D" uid="uid://b2c0vpe7y61g3" path="res://Pieces/p_Action_Board/PanelHover.png" id="2_rshyw"]
+[ext_resource type="StyleBox" uid="uid://bx4ql6cl65tn7" path="res://Pieces/p_Action_Board/PanelBG.tres" id="2_x6w1m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iy4s5"]
+texture = ExtResource("2_mn6pm")
+texture_margin_left = 7.0
+texture_margin_top = 6.0
+texture_margin_right = 7.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mn6pm"]
+texture = ExtResource("2_rshyw")
+texture_margin_left = 7.0
+texture_margin_top = 6.0
+texture_margin_right = 7.0
+texture_margin_bottom = 6.0
 
 [sub_resource type="Theme" id="Theme_x6w1m"]
 default_font = ExtResource("1_5gwtd")
+Button/styles/disabled = null
+Button/styles/focus = SubResource("StyleBoxTexture_iy4s5")
+Button/styles/hover = SubResource("StyleBoxTexture_mn6pm")
+Button/styles/normal = ExtResource("2_x6w1m")
+Button/styles/pressed = null
+Panel/styles/panel = ExtResource("2_x6w1m")
+PanelContainer/styles/panel = ExtResource("2_x6w1m")
 
 [node name="cvl2_Action_Board" type="CanvasLayer"]
 script = ExtResource("1_mbagx")
@@ -25,7 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.0196078, 0.0313726, 0.0784314, 0.74902)
 
 [node name="mgc2_Actions" type="MarginContainer" parent="ctr2_Action_Board"]
 layout_mode = 2
@@ -60,6 +84,11 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Confirm"
+
+[node name="btn2_Full_Text" type="Button" parent="ctr2_Action_Board/mgc2_Actions/VBoxContainer/hbc2_Window_Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Full Text"
 
 [node name="btn2_Cancel" type="Button" parent="ctr2_Action_Board/mgc2_Actions/VBoxContainer/hbc2_Window_Controls"]
 layout_mode = 2

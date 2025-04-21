@@ -5,6 +5,7 @@ var _controller:EntityController
 
 @onready var animation_tree:AnimationTree = $nde_Animations/ant_Entity
 @onready var _charSprite:Sprite2D = $spe2_Entity
+@onready var entityInteract:Area2D = $ara2_Interact
 
 const skins:Array[String] = [
 	"res://Pieces/p_Entity/Adam/Adam_16x16.png",
@@ -45,6 +46,7 @@ func _physics_process(delta: float) -> void:
 		current_skin = set_skin
 
 	if _controller.move_direction != Vector2.ZERO:
+		entityInteract.rotation_degrees = rad_to_deg(Vector2.ZERO.angle_to_point(_controller.move_direction)) + 90
 		animation_tree.set("parameters/conditions/is_walking", true)
 		animation_tree.set("parameters/conditions/is_idle", false)
 		animation_tree.set("parameters/Idle/blend_position", _controller.move_direction)
@@ -52,6 +54,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		animation_tree.set("parameters/conditions/is_walking", false)
 		animation_tree.set("parameters/conditions/is_idle", true)
+	
+	if _controller.is_interacting:
+		for a:Area2D in entityInteract.get_overlapping_areas():
+			if a is Interact:
+				a.open_action()
 
 	move_and_slide()
 

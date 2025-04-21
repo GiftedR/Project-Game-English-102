@@ -1,13 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://kvheax3uhhni"]
+[gd_scene load_steps=6 format=3 uid="uid://kvheax3uhhni"]
 
 [ext_resource type="PackedScene" uid="uid://dkxaxbtsolqbn" path="res://Pieces/p_Entity.tscn" id="1_a22na"]
 [ext_resource type="Script" uid="uid://hn42gu6v4rks" path="res://Pieces/p_Player/Player.gd" id="2_ms8ax"]
+[ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="3_dai5m"]
+[ext_resource type="Texture2D" uid="uid://dx4rkc3vnkqy0" path="res://Pieces/InputButtons.png" id="4_n3xbh"]
+
+[sub_resource type="Theme" id="Theme_n3xbh"]
+default_font = ExtResource("3_dai5m")
 
 [node name="chb2_Player" instance=ExtResource("1_a22na")]
 script = ExtResource("2_ms8ax")
 
-[node name="ant_Entity" parent="nde_Animations" index="1"]
+[node name="ant_Entity" parent="nde_Animations" index="0"]
 parameters/conditions/is_idle = false
-parameters/conditions/is_walking = false
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="cvl2_Active_Controls" type="CanvasLayer" parent="." index="6"]
+
+[node name="ctr2_Active_Controls" type="Control" parent="cvl2_Active_Controls" index="0"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_n3xbh")
+
+[node name="vbc2_Controls" type="VBoxContainer" parent="cvl2_Active_Controls/ctr2_Active_Controls" index="0"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ctr2_Spacer" type="Control" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls" index="0"]
+layout_mode = 2
+
+[node name="hbc2_Controls" type="HBoxContainer" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls" index="1"]
+layout_mode = 2
+
+[node name="ctr2_Interact_Button" type="Control" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Controls" index="0"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="spe2_Interact_Button" type="Sprite2D" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Controls/ctr2_Interact_Button" index="0"]
+position = Vector2(8, 8)
+texture = ExtResource("4_n3xbh")
+hframes = 14
+vframes = 2
+frame = 2
+
+[node name="lbl2_Interact_Button" type="Label" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Controls" index="1"]
+layout_mode = 2
+text = "Interact"
+
+[node name="ctr2_Spacer" type="Control" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Controls" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ctr2_Move_Buttons" type="Control" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Controls" index="3"]
+custom_minimum_size = Vector2(64, 16)
+layout_mode = 2
+
+[node name="spe2_Move_Buttons" type="Sprite2D" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Controls/ctr2_Move_Buttons" index="0"]
+position = Vector2(32, 8)
+texture = ExtResource("4_n3xbh")
+region_enabled = true
+region_rect = Rect2(80, 0, 64, 16)
+
+[node name="lbl2_Move_Buttons" type="Label" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Controls" index="4"]
+layout_mode = 2
+text = "Move"

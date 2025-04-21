@@ -18,4 +18,8 @@ func _enter_tree() -> void:
 
 func _exit_tree() -> void:
 	Player.instance.with_busy(false)
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		self.queue_free()
 	
