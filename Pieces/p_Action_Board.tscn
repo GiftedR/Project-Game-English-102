@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://byuk1bhvscowb"]
+[gd_scene load_steps=10 format=3 uid="uid://byuk1bhvscowb"]
 
 [ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="1_5gwtd"]
 [ext_resource type="Script" uid="uid://qt610ahban13" path="res://Pieces/p_Action_Board/ActionBoard.gd" id="1_mbagx"]
 [ext_resource type="Texture2D" uid="uid://cce5qtn30fjhl" path="res://Pieces/p_Action_Board/PanelFocus.png" id="2_mn6pm"]
 [ext_resource type="Texture2D" uid="uid://b2c0vpe7y61g3" path="res://Pieces/p_Action_Board/PanelHover.png" id="2_rshyw"]
 [ext_resource type="StyleBox" uid="uid://bx4ql6cl65tn7" path="res://Pieces/p_Action_Board/PanelBG.tres" id="2_x6w1m"]
+[ext_resource type="FontFile" uid="uid://caashfejeihkd" path="res://Pieces/p_Action_Board/times.ttf" id="6_iy4s5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iy4s5"]
 texture = ExtResource("2_mn6pm")
@@ -30,19 +31,19 @@ Button/styles/pressed = null
 Panel/styles/panel = ExtResource("2_x6w1m")
 PanelContainer/styles/panel = ExtResource("2_x6w1m")
 
-[node name="cvl2_Action_Board" type="CanvasLayer"]
-script = ExtResource("1_mbagx")
-
-[node name="ctr2_Action_Board" type="Control" parent="."]
+[node name="ctr2_Action_Board" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = SubResource("Theme_x6w1m")
+script = ExtResource("1_mbagx")
 
-[node name="clr2_BG" type="ColorRect" parent="ctr2_Action_Board"]
+[node name="clr2_BG" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,55 +52,70 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0196078, 0.0313726, 0.0784314, 0.74902)
 
-[node name="mgc2_Actions" type="MarginContainer" parent="ctr2_Action_Board"]
-layout_mode = 2
-offset_right = 320.0
-offset_bottom = 180.0
+[node name="mgc2_Actions" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="vbc2_Actions" type="VBoxContainer" parent="ctr2_Action_Board/mgc2_Actions"]
+[node name="vbc2_Actions" type="VBoxContainer" parent="mgc2_Actions"]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="lbl2_Action_Title" type="Label" parent="ctr2_Action_Board/mgc2_Actions/vbc2_Actions"]
+[node name="lbl2_Action_Title" type="Label" parent="mgc2_Actions/vbc2_Actions"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Action Title (:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="plc2_Actions" type="PanelContainer" parent="ctr2_Action_Board/mgc2_Actions/vbc2_Actions"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="plc2_Full_Text" type="PanelContainer" parent="ctr2_Action_Board/mgc2_Actions/vbc2_Actions"]
+[node name="plc2_Actions" type="PanelContainer" parent="mgc2_Actions/vbc2_Actions"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="rtl2_Full_Text" type="RichTextLabel" parent="ctr2_Action_Board/mgc2_Actions/vbc2_Actions/plc2_Full_Text"]
+[node name="plc2_Full_Text" type="PanelContainer" parent="mgc2_Actions/vbc2_Actions"]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="mgc2_Full_Text" type="MarginContainer" parent="mgc2_Actions/vbc2_Actions/plc2_Full_Text"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="rtl2_Full_Text" type="RichTextLabel" parent="mgc2_Actions/vbc2_Actions/plc2_Full_Text/mgc2_Full_Text"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("6_iy4s5")
+theme_override_font_sizes/normal_font_size = 30
 text = "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow! Let's shake it up a little Barry! Breakfast is ready! Coming! Hang on a second. Hello? Barry? Adam? Can you believe this is happening? I can't. I'll pick you up. Looking sharp. Use the stairs, Your father paid good money for those. Sorry. I'm excited. Here's the graduate. We're very proud of you, son. A perfect report card, all B's. Very proud. Ma! I got a thing going here. You got lint on your fuzz. Ow! That's me!"
 
-[node name="hbc2_Window_Controls" type="HBoxContainer" parent="ctr2_Action_Board/mgc2_Actions/vbc2_Actions"]
+[node name="hbc2_Window_Controls" type="HBoxContainer" parent="mgc2_Actions/vbc2_Actions"]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="btn2_Confirm" type="Button" parent="ctr2_Action_Board/mgc2_Actions/vbc2_Actions/hbc2_Window_Controls"]
+[node name="btn2_Confirm" type="Button" parent="mgc2_Actions/vbc2_Actions/hbc2_Window_Controls"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
 text = "Confirm"
 
-[node name="btn2_Full_Text" type="Button" parent="ctr2_Action_Board/mgc2_Actions/vbc2_Actions/hbc2_Window_Controls"]
+[node name="btn2_Full_Text" type="Button" parent="mgc2_Actions/vbc2_Actions/hbc2_Window_Controls"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
 text = "Full Text"
 
-[node name="btn2_Cancel" type="Button" parent="ctr2_Action_Board/mgc2_Actions/vbc2_Actions/hbc2_Window_Controls"]
+[node name="btn2_Cancel" type="Button" parent="mgc2_Actions/vbc2_Actions/hbc2_Window_Controls"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
 text = "Cancel"

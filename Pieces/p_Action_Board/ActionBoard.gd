@@ -1,19 +1,19 @@
-extends CanvasLayer
+extends Control
 class_name ActionBoard
 
-@onready var btn2_Cancel:Button = $ctr2_Action_Board/mgc2_Actions/vbc2_Actions/hbc2_Window_Controls/btn2_Cancel
-@onready var btn2_Confirm:Button = $ctr2_Action_Board/mgc2_Actions/vbc2_Actions/hbc2_Window_Controls/btn2_Confirm
+@onready var btn2_Cancel:Button = $mgc2_Actions/vbc2_Actions/hbc2_Window_Controls/btn2_Cancel
+@onready var btn2_Confirm:Button = $mgc2_Actions/vbc2_Actions/hbc2_Window_Controls/btn2_Confirm
 
-@onready var btn2_full_text:Button = $ctr2_Action_Board/mgc2_Actions/vbc2_Actions/hbc2_Window_Controls/btn2_Full_Text
+@onready var btn2_full_text:Button = $mgc2_Actions/vbc2_Actions/hbc2_Window_Controls/btn2_Full_Text
 
-@onready var action_panel:PanelContainer = $ctr2_Action_Board/mgc2_Actions/vbc2_Actions/plc2_Actions
-@onready var text_panel:PanelContainer = $ctr2_Action_Board/mgc2_Actions/vbc2_Actions/plc2_Full_Text
+@onready var action_panel:PanelContainer = $mgc2_Actions/vbc2_Actions/plc2_Actions
+@onready var text_panel:PanelContainer = $mgc2_Actions/vbc2_Actions/plc2_Full_Text
 
 var is_full_text_visible:bool = false
 
 static func spawn() -> ActionBoard:
 	var board:ActionBoard = load("res://Pieces/p_Action_Board.tscn").instantiate()
-	World.instance.get_viewport().get_camera_2d().add_child(board)
+	Root.add_menu(board)
 	return board
 
 func _ready() -> void:
