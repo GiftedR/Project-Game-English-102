@@ -1,0 +1,17 @@
+:root
+{
+    --clear-color: #050814;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: var(--clear-color);
+}
+
+.game
+{
+    aspect-ratio: 16/9;
+    width: 100vw;
+}
