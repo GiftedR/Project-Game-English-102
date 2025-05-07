@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://byuk1bhvscowb"]
+[gd_scene load_steps=24 format=3 uid="uid://byuk1bhvscowb"]
 
 [ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="1_5gwtd"]
 [ext_resource type="Script" uid="uid://qt610ahban13" path="res://Pieces/p_Action_Board/ActionBoard.gd" id="1_mbagx"]
@@ -6,6 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://b2c0vpe7y61g3" path="res://Pieces/p_Action_Board/PanelHover.png" id="2_rshyw"]
 [ext_resource type="StyleBox" uid="uid://bx4ql6cl65tn7" path="res://Pieces/p_Action_Board/PanelBG.tres" id="2_x6w1m"]
 [ext_resource type="FontFile" uid="uid://caashfejeihkd" path="res://Pieces/p_Action_Board/times.ttf" id="6_iy4s5"]
+[ext_resource type="Script" uid="uid://dbap0gqox0ty1" path="res://addons/markdownlabel/markdownlabel.gd" id="7_4rlns"]
+[ext_resource type="Script" uid="uid://dcx7crs23nf4" path="res://addons/markdownlabel/header_formats/h1_format.gd" id="8_4k10d"]
+[ext_resource type="Script" uid="uid://d0sin64i4v3op" path="res://addons/markdownlabel/header_formats/h2_format.gd" id="9_klukk"]
+[ext_resource type="Script" uid="uid://dlok0dv1tq2bf" path="res://addons/markdownlabel/header_formats/h3_format.gd" id="10_tpbpg"]
+[ext_resource type="Script" uid="uid://bayuh2vafablg" path="res://addons/markdownlabel/header_formats/h4_format.gd" id="11_j8omo"]
+[ext_resource type="Script" uid="uid://dfr1w7u3jgni3" path="res://addons/markdownlabel/header_formats/h5_format.gd" id="12_2aoer"]
+[ext_resource type="Script" uid="uid://bsi6dexoofpe6" path="res://addons/markdownlabel/header_formats/h6_format.gd" id="13_k5sam"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iy4s5"]
 texture = ExtResource("2_mn6pm")
@@ -33,6 +40,66 @@ PanelContainer/styles/panel = ExtResource("2_x6w1m")
 
 [sub_resource type="LabelSettings" id="LabelSettings_iy4s5"]
 font_size = 32
+
+[sub_resource type="Resource" id="Resource_wio2o"]
+resource_local_to_scene = true
+script = ExtResource("8_4k10d")
+font_size = 2.285
+is_bold = false
+is_italic = false
+is_underlined = false
+override_font_color = false
+font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_tqvds"]
+resource_local_to_scene = true
+script = ExtResource("9_klukk")
+font_size = 1.714
+is_bold = false
+is_italic = false
+is_underlined = false
+override_font_color = false
+font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_owpw2"]
+resource_local_to_scene = true
+script = ExtResource("10_tpbpg")
+font_size = 1.428
+is_bold = false
+is_italic = false
+is_underlined = false
+override_font_color = false
+font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_34f15"]
+resource_local_to_scene = true
+script = ExtResource("11_j8omo")
+font_size = 1.142
+is_bold = false
+is_italic = false
+is_underlined = false
+override_font_color = false
+font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_6dhvh"]
+resource_local_to_scene = true
+script = ExtResource("12_2aoer")
+font_size = 1.0
+is_bold = false
+is_italic = false
+is_underlined = false
+override_font_color = false
+font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_qomhk"]
+resource_local_to_scene = true
+script = ExtResource("13_k5sam")
+font_size = 0.857
+is_bold = false
+is_italic = false
+is_underlined = false
+override_font_color = false
+font_color = Color(1, 1, 1, 1)
 
 [node name="ctr2_Action_Board" type="Control"]
 layout_mode = 3
@@ -98,9 +165,19 @@ theme_override_constants/margin_bottom = 8
 
 [node name="rtl2_Full_Text" type="RichTextLabel" parent="mgc2_Actions/vbc2_Actions/plc2_Full_Text/mgc2_Full_Text"]
 layout_mode = 2
+focus_mode = 2
 theme_override_fonts/normal_font = ExtResource("6_iy4s5")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
+selection_enabled = true
+script = ExtResource("7_4rlns")
+h1 = SubResource("Resource_wio2o")
+h2 = SubResource("Resource_tqvds")
+h3 = SubResource("Resource_owpw2")
+h4 = SubResource("Resource_34f15")
+h5 = SubResource("Resource_6dhvh")
+h6 = SubResource("Resource_qomhk")
+metadata/_custom_type_script = "uid://dbap0gqox0ty1"
 
 [node name="hbc2_Window_Controls" type="HBoxContainer" parent="mgc2_Actions/vbc2_Actions"]
 layout_mode = 2

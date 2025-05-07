@@ -1,10 +1,15 @@
 extends Area2D
 class_name Interact
 
-@export var call_action:Callable = func() -> void: ActionBoard.spawn()
+@export_category("Action Board")
+@export var action_title:String
+@export_multiline var action_body:String
+@export var full_text_only:bool = false
+
+@export_category("Interact")
+@export var call_action:Callable = func() -> void: ActionBoard.spawn().with_details(action_title, action_body, full_text_only)
 @export var is_interactable:bool = true
 @export var is_important:bool = true
-
 var is_mouse_inside:bool = false
 
 func _ready() -> void:

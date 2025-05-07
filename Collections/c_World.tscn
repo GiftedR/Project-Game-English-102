@@ -260,9 +260,21 @@ metadata/_edit_lock_ = true
 
 [node name="nde2_Intro" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
 position = Vector2(-40, 307)
+action_title = "Intro"
+action_body = "[indent]Test Thesis was a very cool thesis[/indent]"
+full_text_only = true
 
 [node name="nde2_Thesis" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
 position = Vector2(0, -3)
+action_title = "Thesis"
+action_body = "
+[p align=center]
+My thesis is:
+[font_size=48]
+	Video games need to be utilized more in schools as a tool for learning.
+[/font_size]
+[/p]"
+full_text_only = true
 
 [node name="drl2_Sun" type="DirectionalLight2D" parent="nde2_Tiles"]
 visible = false

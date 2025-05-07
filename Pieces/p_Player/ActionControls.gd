@@ -20,6 +20,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	set_deferred("size", DisplayServer.window_get_size(0) / 4)
+	position = Vector2.ZERO
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ply_zm_in"):
