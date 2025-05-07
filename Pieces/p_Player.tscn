@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://kvheax3uhhni"]
+[gd_scene load_steps=7 format=3 uid="uid://kvheax3uhhni"]
 
 [ext_resource type="PackedScene" uid="uid://dkxaxbtsolqbn" path="res://Pieces/p_Entity.tscn" id="1_a22na"]
 [ext_resource type="Script" uid="uid://hn42gu6v4rks" path="res://Pieces/p_Player/Player.gd" id="2_ms8ax"]
 [ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="3_dai5m"]
+[ext_resource type="Script" uid="uid://b0jsk145n24qb" path="res://Pieces/p_Player/ActionControls.gd" id="4_51do0"]
 [ext_resource type="Texture2D" uid="uid://dx4rkc3vnkqy0" path="res://Pieces/InputButtons.png" id="4_n3xbh"]
 
 [sub_resource type="Theme" id="Theme_n3xbh"]
@@ -19,30 +20,51 @@ parameters/Walk/blend_position = Vector2(0, 0)
 [node name="cvl2_Active_Controls" type="CanvasLayer" parent="." index="6"]
 
 [node name="ctr2_Active_Controls" type="Control" parent="cvl2_Active_Controls" index="0"]
-modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -960.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+mouse_filter = 2
+theme = SubResource("Theme_n3xbh")
+script = ExtResource("4_51do0")
+
+[node name="vbc2_Controls" type="VBoxContainer" parent="cvl2_Active_Controls/ctr2_Active_Controls" index="0"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme = SubResource("Theme_n3xbh")
 
-[node name="vbc2_Controls" type="VBoxContainer" parent="cvl2_Active_Controls/ctr2_Active_Controls" index="0"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -20.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="ctr2_Spacer" type="Control" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls" index="0"]
+[node name="hbc2_Zoom" type="HBoxContainer" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls" index="0"]
 layout_mode = 2
 
-[node name="hbc2_Controls" type="HBoxContainer" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls" index="1"]
+[node name="btn2_Zoom_In" type="Button" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Zoom" index="0"]
+layout_mode = 2
+text = "+"
+flat = true
+
+[node name="btn2_Zoom_Reset" type="Button" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Zoom" index="1"]
+layout_mode = 2
+text = "O"
+flat = true
+
+[node name="btn2_Zoom_Out" type="Button" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Zoom" index="2"]
+layout_mode = 2
+text = "-"
+flat = true
+
+[node name="ctr2_Spacer" type="Control" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="hbc2_Controls" type="HBoxContainer" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls" index="2"]
+modulate = Color(1, 1, 1, 0.752941)
 layout_mode = 2
 
 [node name="ctr2_Interact_Button" type="Control" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Controls" index="0"]

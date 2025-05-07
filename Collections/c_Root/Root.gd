@@ -14,3 +14,11 @@ func _ready() -> void:
 
 static func add_menu(menuitem:Control) -> void:
 	instance.uiitems.add_child(menuitem)
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_full"):
+		match DisplayServer.window_get_mode():
+			DisplayServer.WINDOW_MODE_FULLSCREEN:
+				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			_: # DisplayServer.WINDOW_MODE_WINDOWED:
+				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

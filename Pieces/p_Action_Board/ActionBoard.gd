@@ -9,7 +9,13 @@ class_name ActionBoard
 @onready var action_panel:PanelContainer = $mgc2_Actions/vbc2_Actions/plc2_Actions
 @onready var text_panel:PanelContainer = $mgc2_Actions/vbc2_Actions/plc2_Full_Text
 
-var is_full_text_visible:bool = false
+@onready var rtl_full_text:RichTextLabel = $mgc2_Actions/vbc2_Actions/plc2_Full_Text/mgc2_Full_Text/rtl2_Full_Text
+
+@onready var lbl_action_title:Label = $mgc2_Actions/vbc2_Actions/lbl2_Action_Title
+
+@export var is_full_text_visible:bool = false
+@export var title_text:String = "Action Title (:"
+@export_multiline var full_text_content:String = "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow! Let's shake it up a little Barry! Breakfast is ready! Coming! Hang on a second. Hello? Barry? Adam? Can you believe this is happening? I can't. I'll pick you up. Looking sharp. Use the stairs, Your father paid good money for those. Sorry. I'm excited. Here's the graduate. We're very proud of you, son. A perfect report card, all B's. Very proud. Ma! I got a thing going here. You got lint on your fuzz. Ow! That's me!"
 
 static func spawn() -> ActionBoard:
 	var board:ActionBoard = load("res://Pieces/p_Action_Board.tscn").instantiate()
@@ -25,6 +31,9 @@ func _ready() -> void:
 		action_panel.visible = !is_full_text_visible
 		text_panel.visible = is_full_text_visible
 	)
+
+	rtl_full_text.text = full_text_content
+	lbl_action_title.text = title_text
 
 
 func _enter_tree() -> void:
