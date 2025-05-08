@@ -124,11 +124,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="plc2_Actions" type="PanelContainer" parent="mgc2_Actions/vbc2_Actions"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="svc2_Mini_Game" type="SubViewportContainer" parent="mgc2_Actions/vbc2_Actions/plc2_Actions"]
+layout_mode = 2
+
+[node name="svp_Mini_Game" type="SubViewport" parent="mgc2_Actions/vbc2_Actions/plc2_Actions/svc2_Mini_Game"]
+handle_input_locally = false
+size = Vector2i(1250, 614)
+render_target_update_mode = 4
+
 [node name="plc2_Full_Text" type="PanelContainer" parent="mgc2_Actions/vbc2_Actions"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://hkrnyjxeexe2"]
+[gd_scene load_steps=17 format=4 uid="uid://hkrnyjxeexe2"]
 
 [ext_resource type="Script" uid="uid://d703afqsbbp7" path="res://Collections/c_World/World.gd" id="1_gfwas"]
 [ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="2_e8mge"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqvffwm0xthv5" path="res://Collections/c_World/light_beam.png" id="3_5pccg"]
 [ext_resource type="Material" uid="uid://ddxemxlnq56kc" path="res://Collections/c_World/LightShaderMaterial.tres" id="4_5pccg"]
 [ext_resource type="PackedScene" uid="uid://b8ckws6n124ii" path="res://Pieces/p_Interact.tscn" id="4_gmhvb"]
+[ext_resource type="PackedScene" uid="uid://bx5uy25tslcae" path="res://Collections/MiniGames/c_Typing_Game.tscn" id="7_6j4hd"]
 
 [sub_resource type="Gradient" id="Gradient_gmhvb"]
 interpolation_mode = 2
@@ -38,6 +39,16 @@ fill_to = Vector2(0.5, 0)
 [sub_resource type="LabelSettings" id="LabelSettings_gmhvb"]
 font = ExtResource("2_e8mge")
 shadow_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="Gradient" id="Gradient_6j4hd"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.25098)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tn05v"]
+gradient = SubResource("Gradient_6j4hd")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [node name="nde2_World" type="Node2D"]
 y_sort_enabled = true
@@ -80,7 +91,7 @@ occluder = SubResource("OccluderPolygon2D_gmhvb")
 [node name="tml2_Furniture" type="TileMapLayer" parent="nde2_Tiles"]
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD7/w0AAQABAEgAAAD7/w8AAQABAEoAAAD8/w4AAQACAEkAAAD9/w4AAQACAEkAAAD+/w4AAQADAEkAAAD+/w0AAQADAEgAAAD9/w0AAQACAEgAAAD8/w0AAQACAEgAAAD9/xAAAQADAEoAAAACAA4AAQAHAEgAAAADAA4AAQAIAEgAAAAEAA4AAQALADMAAAD9/xMAAQANACgAAAD9/xQAAQACACMAAAD9/xUAAQABACYAAAD8/wwAAQAKAEIAAAACAAwAAQAKAEIAAAAEABQAAQABAAMAAAADABQAAQABAAMAAAACABQAAQABAAMAAAABABQAAQABAAMAAAAAABQAAQAAAAMAAAAAABMAAQAAAAIAAAAAABIAAQAEAAQAAAAAABEAAQAAAAIAAAAAABAAAQAAAAAAAAABABAAAQABAAAAAAACABAAAQABAAAAAAADABAAAQAGAAcAAAAEABAAAQABAAAAAAACABIAAQAFABUAAAACABMAAQADAAMAAAD//wAAAQAKACgAAAACAAcAAQABACYAAAAEAAcAAQABACYAAAAEAAUAAQABACYAAAACAAUAAQABACYAAAACAAMAAQABACYAAAAEAAMAAQABACYAAAD7/wcAAQABACYAAAD7/wUAAQABACYAAAD7/wMAAQABACYAAAD9/wMAAQABACYAAAD9/wUAAQABACYAAAD9/wcAAQABACYAAAD7/wYAAQACACMAAAD7/wQAAQACACMAAAD9/wQAAQACACMAAAD9/wYAAQACACMAAAD9/wIAAQACACMAAAD7/wIAAQACACMAAAACAAYAAQACACMAAAAEAAYAAQACACMAAAAEAAQAAQACACMAAAACAAQAAQACACMAAAACAAIAAQACACMAAAAEAAIAAQACACMAAAD8//z/AQAAACkAAAADAPz/AQAIABYAAAD7/xcAAQAGAA0AAAA=")
+tile_map_data = PackedByteArray("AAD7/w0AAQABAEgAAAD7/w8AAQABAEoAAAD8/w4AAQACAEkAAAD9/w4AAQACAEkAAAD+/w4AAQADAEkAAAD+/w0AAQADAEgAAAD9/w0AAQACAEgAAAD8/w0AAQACAEgAAAD9/xAAAQADAEoAAAACAA4AAQAHAEgAAAADAA4AAQAIAEgAAAAEAA4AAQALADMAAAD9/xMAAQANACgAAAD9/xQAAQACACMAAAD9/xUAAQABACYAAAD8/wwAAQAKAEIAAAACAAwAAQAKAEIAAAAEABQAAQABAAMAAAADABQAAQABAAMAAAACABQAAQABAAMAAAABABQAAQABAAMAAAAAABQAAQAAAAMAAAAAABMAAQAAAAIAAAAAABIAAQAEAAQAAAAAABEAAQAAAAIAAAAAABAAAQAAAAAAAAABABAAAQABAAAAAAACABAAAQABAAAAAAADABAAAQAGAAcAAAAEABAAAQABAAAAAAACABIAAQAFABUAAAACABMAAQADAAMAAAD//wAAAQAKACgAAAACAAcAAQABACYAAAAEAAcAAQABACYAAAAEAAUAAQABACYAAAACAAUAAQABACYAAAACAAMAAQABACYAAAAEAAMAAQABACYAAAD7/wcAAQABACYAAAD7/wUAAQABACYAAAD7/wMAAQABACYAAAD9/wMAAQABACYAAAD9/wUAAQABACYAAAD9/wcAAQABACYAAAD7/wYAAQACACMAAAD7/wQAAQACACMAAAD9/wQAAQACACMAAAD9/wYAAQACACMAAAD9/wIAAQACACMAAAD7/wIAAQACACMAAAACAAYAAQACACMAAAAEAAYAAQACACMAAAAEAAQAAQACACMAAAACAAQAAQACACMAAAACAAIAAQACACMAAAAEAAIAAQACACMAAAD8//z/AQAAACkAAAADAPz/AQAIABYAAAD7/xcAAQAGAA0AAADx//T/AQAKACgAAAD+/8n/AQAHADMAAAABAMn/AQAIADMAAAD//8n/AQAJADMAAAAAAMn/AQAJADMAAAA=")
 tile_set = ExtResource("2_ic0yf")
 
 [node name="tml2_Decor" type="TileMapLayer" parent="nde2_Tiles"]
@@ -92,13 +103,15 @@ tile_set = ExtResource("2_ic0yf")
 [node name="tml2_Lightage" type="TileMapLayer" parent="nde2_Tiles"]
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAABAA4AAgAAAAAAAgD7/xEAAgAAAAAAAgAEABcAAgAAAAAAAgD9//f/AgAAAAAAAgACAPf/AgAAAAAAAgACAPL/AgAAAAAAAgD9//L/AgAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAABAA4AAgAAAAAAAgD7/xEAAgAAAAAAAgAEABcAAgAAAAAAAgD9//f/AgAAAAAAAgACAPf/AgAAAAAAAgACAPL/AgAAAAAAAgD9//L/AgAAAAAAAgD2//D/AgAAAAAAAgD2//n/AgAAAAAAAgDt//n/AgAAAAAAAgDt//D/AgAAAAAAAgAJAPD/AgAAAAAAAgASAPD/AgAAAAAAAgAJAPn/AgAAAAAAAgASAPn/AgAAAAAAAgDt/+v/AgAAAAAAAgD2/+v/AgAAAAAAAgDt/+L/AgAAAAAAAgD2/+L/AgAAAAAAAgAJAOv/AgAAAAAAAgASAOv/AgAAAAAAAgAJAOL/AgAAAAAAAgASAOL/AgAAAAAAAgD9/+n/AgAAAAAAAgACAOn/AgAAAAAAAgD9/+T/AgAAAAAAAgACAOT/AgAAAAAAAgD7/93/AgAAAAAAAgAEAN3/AgAAAAAAAgD7/9T/AgAAAAAAAgAEANT/AgAAAAAAAgD7/83/AgAAAAAAAgAEAM3/AgAAAAAAAgAEAMT/AgAAAAAAAgD7/8T/AgAAAAAAAgA=")
 tile_set = ExtResource("2_ic0yf")
 
 [node name="cvl2_Darkness" type="CanvasModulate" parent="nde2_Tiles/tml2_Lightage"]
+visible = false
 color = Color(0.0941176, 0.141176, 0.25098, 1)
 
 [node name="plt2_Thesis" type="PointLight2D" parent="nde2_Tiles/tml2_Lightage"]
+visible = false
 position = Vector2(0.0587199, 198)
 rotation = -1.5708
 scale = Vector2(0.31747, 0.167962)
@@ -128,6 +141,7 @@ texture = ExtResource("3_5pccg")
 offset = Vector2(512, 0)
 
 [node name="plt_Hallway" type="PointLight2D" parent="nde2_Tiles/tml2_Lightage"]
+visible = false
 position = Vector2(-15, 176)
 energy = 0.75
 shadow_enabled = true
@@ -143,8 +157,8 @@ metadata/_edit_lock_ = true
 use_parent_material = true
 offset_left = -87.0
 offset_top = 192.0
-offset_right = 86.0
-offset_bottom = 389.0
+offset_right = 6.0
+offset_bottom = 296.0
 text = "Intro
 "
 label_settings = SubResource("LabelSettings_gmhvb")
@@ -172,11 +186,21 @@ offset_left = -160.0
 offset_top = -288.0
 offset_right = -32.0
 offset_bottom = -91.0
-text = "Paragraph 1"
+text = "Argument 1"
 label_settings = SubResource("LabelSettings_gmhvb")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/lbl2_Par-1"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
 
 [node name="lbl2_Par-2" type="Label" parent="nde2_Tiles/nde2_Labels"]
 material = ExtResource("4_5pccg")
@@ -185,11 +209,21 @@ offset_left = 32.0
 offset_top = -288.0
 offset_right = 160.0
 offset_bottom = -91.0
-text = "Paragraph 2"
+text = "Argument 2"
 label_settings = SubResource("LabelSettings_gmhvb")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/lbl2_Par-2"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
 
 [node name="lbl2_Par-3" type="Label" parent="nde2_Tiles/nde2_Labels"]
 material = ExtResource("4_5pccg")
@@ -198,11 +232,21 @@ offset_left = -160.0
 offset_top = -512.0
 offset_right = -32.0
 offset_bottom = -315.0
-text = "Paragraph 3"
+text = "Argument 3"
 label_settings = SubResource("LabelSettings_gmhvb")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/lbl2_Par-3"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
 
 [node name="lbl2_Par-4" type="Label" parent="nde2_Tiles/nde2_Labels"]
 material = ExtResource("4_5pccg")
@@ -211,24 +255,44 @@ offset_left = 32.0
 offset_top = -512.0
 offset_right = 160.0
 offset_bottom = -315.0
-text = "Paragraph 4"
+text = "Argument 4"
 label_settings = SubResource("LabelSettings_gmhvb")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/lbl2_Par-4"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
+
 [node name="lbl2_Conclusion" type="Label" parent="nde2_Tiles/nde2_Labels"]
 material = ExtResource("4_5pccg")
 use_parent_material = true
 offset_left = -87.0
-offset_top = -736.0
+offset_top = -543.0
 offset_right = 86.0
-offset_bottom = -539.0
+offset_bottom = -443.0
 text = "Conclusion"
 label_settings = SubResource("LabelSettings_gmhvb")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/lbl2_Conclusion"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
 
 [node name="lbl2_Works_Cited" type="Label" parent="nde2_Tiles/nde2_Labels"]
 visible = false
@@ -247,14 +311,24 @@ metadata/_edit_lock_ = true
 [node name="rtl2_Works_Cited" type="RichTextLabel" parent="nde2_Tiles/nde2_Labels"]
 use_parent_material = true
 offset_left = -80.0
-offset_top = -986.0
+offset_top = -909.0
 offset_right = 80.0
-offset_bottom = -800.0
+offset_bottom = -891.0
 theme_override_fonts/normal_font = ExtResource("2_e8mge")
 bbcode_enabled = true
-text = "Works Cited
-Item"
-metadata/_edit_lock_ = true
+text = "[p align=center]Works Cited[/p]
+"
+metadata/_edit_group_ = true
+
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/rtl2_Works_Cited"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
 
 [node name="nde2_Interactions" type="Node2D" parent="nde2_Tiles"]
 
@@ -262,7 +336,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-40, 307)
 action_title = "Intro"
 action_body = "
-		Games have always been a major source of entertainment in humans. From simple games like _Catch_, to more complex games like Baseball. Each game provides their own fun to people in differing ways. In schools, games are used as a fun way to help memorize details and help de-stress students from stressful school life. As time went on, things got more advanced. Now games of today prefer a digital medium, but it doesn’t seem like schools are taking advantage of the digital medium."
+		Games have always been a major source of entertainment in humans. From simple games like _Catch_, to more complex games like _Baseball_. Each game provides their own fun to people in differing ways. In schools, games are used as a fun way to help memorize details and help de-stress students from stressful school life. As time went on, things got more advanced. Now games of today prefer a digital medium, but it doesn’t seem like schools are taking advantage of the digital medium."
 full_text_only = true
 
 [node name="nde2_Thesis" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
@@ -277,8 +351,21 @@ My thesis is:
 [/p]"
 full_text_only = true
 
-[node name="drl2_Sun" type="DirectionalLight2D" parent="nde2_Tiles"]
+[node name="nde2_Par-1" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
+position = Vector2(-223, -200)
+action_title = "Argument 1"
+action_body = "Let me begin with saying that video games have been shown to be a fun <tool for learning>."
+action_scene = ExtResource("7_6j4hd")
+
+[node name="drl2_Sun-Dark" type="DirectionalLight2D" parent="nde2_Tiles"]
 visible = false
 color = Color(0.772549, 0.772549, 0.686275, 1)
 blend_mode = 1
+height = 1.0
+
+[node name="cvl2_Recolor" type="CanvasModulate" parent="nde2_Tiles"]
+color = Color(0.733333, 0.733333, 0.733333, 1)
+
+[node name="drl2_Sun" type="DirectionalLight2D" parent="nde2_Tiles"]
+energy = 0.25
 height = 1.0

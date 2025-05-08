@@ -59,6 +59,7 @@ flat = true
 [node name="ctr2_Spacer" type="Control" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls" index="1"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="hbc2_Controls" type="HBoxContainer" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls" index="2"]
 modulate = Color(1, 1, 1, 0.752941)

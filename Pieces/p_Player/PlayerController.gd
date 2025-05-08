@@ -7,6 +7,17 @@ var camera:Camera2D = Camera2D.new()
 var is_controller:bool = true
 var camera_zoom:float = 4
 
+const tp_locations:Array[Vector2i] = [
+	Vector2i(0, -850), # Works Cited
+	Vector2i(50, 394), # Intro
+	Vector2i(0, 64), # Thesis
+	Vector2i(-145, -177), # Arg 1
+	Vector2i(145, -177), # Arg 2
+	Vector2i(-145, -400), # Arg 3
+	Vector2i(145, -400), # Arg 4
+	Vector2i(0, -545) # Conc
+]
+
 func _init() -> void:
 	instance = self
 
@@ -40,3 +51,22 @@ func _input(event: InputEvent) -> void:
 		is_controller = false
 	elif event is InputEventJoypadButton || event is InputEventJoypadMotion:
 		is_controller = true
+	
+	if event is InputEventKey:
+		match event.key_label:
+			KEY_8:
+				Player.instance.position = tp_locations[0]
+			KEY_1:
+				Player.instance.position = tp_locations[1]
+			KEY_2:
+				Player.instance.position = tp_locations[2]
+			KEY_3:
+				Player.instance.position = tp_locations[3]
+			KEY_4:
+				Player.instance.position = tp_locations[4]
+			KEY_5:
+				Player.instance.position = tp_locations[5]
+			KEY_6:
+				Player.instance.position = tp_locations[6]
+			KEY_7:
+				Player.instance.position = tp_locations[7]

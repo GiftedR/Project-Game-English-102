@@ -1,17 +1,47 @@
 :root
 {
-    --clear-color: #050814;
+	--clear-color: #050814;
+	--text-color: #ebeefa;
 }
 
 body
 {
-    margin: 0;
-    padding: 0;
-    background-color: var(--clear-color);
+	margin: 0;
+	padding: 0;
+	background-color: var(--clear-color);
+	color: var(--text-color);
+}
+
+.hidden
+{
+	display: none;
 }
 
 .game
 {
-    aspect-ratio: 16/9;
-    width: 100vw;
+	aspect-ratio: 16/9;
+	width: 100vw;
+	position: relative;
+}
+
+h1{
+	text-align: center;
+}
+.par
+{
+	aspect-ratio: 2/1;
+	text-align: center;
+	width: 50vw;
+}
+.par>p
+{
+	text-align: left;
+}
+.par:nth-child(even)
+{
+	float:left;
+}
+.par:nth-child(odd)
+{
+	float:right;
 }

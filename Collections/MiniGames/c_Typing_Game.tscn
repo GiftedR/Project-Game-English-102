@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx5uy25tslcae"]
+
+[ext_resource type="Script" uid="uid://cu6ehgprcubpg" path="res://Collections/MiniGames/c_Typing_Game/TypingGame.gd" id="1_x3pav"]
+[ext_resource type="Texture2D" uid="uid://gu3ehbevjckk" path="res://Collections/c_Root/icon.svg" id="2_svnns"]
+
+[node name="nde2_Typing_Game" type="Node2D"]
+script = ExtResource("1_x3pav")
+
+[node name="cmr2_Game_Camera" type="Camera2D" parent="."]
+
+[node name="nde2_World" type="Node2D" parent="."]
+
+[node name="spe2_TMP" type="Sprite2D" parent="nde2_World"]
+texture = ExtResource("2_svnns")
