@@ -23,7 +23,6 @@ var _spawned_type_name:String = "Entity"
 var _name:String = ""
 
 func _enter_tree() -> void:
-	print("Ent Called")
 	if _controller == null:
 		_controller = EntityController.new()\
 			.with_name("Default Controller")

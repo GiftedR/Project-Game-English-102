@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://byuk1bhvscowb"]
+[gd_scene load_steps=23 format=3 uid="uid://byuk1bhvscowb"]
 
 [ext_resource type="Script" uid="uid://qt610ahban13" path="res://Pieces/p_Action_Board/ActionBoard.gd" id="1_mbagx"]
 [ext_resource type="Theme" uid="uid://ditymelpyt263" path="res://Pieces/p_Theme.tres" id="1_rm453"]
 [ext_resource type="FontFile" uid="uid://c2y5qq67g43ie" path="res://Pieces/p_Action_Board/Fonts/NimbusRomNo9L-Reg.otf" id="3_4rlns"]
 [ext_resource type="FontFile" uid="uid://c2e2vav34pep5" path="res://Pieces/p_Action_Board/Fonts/NimbusRomNo9L-RegIta.otf" id="4_4k10d"]
+[ext_resource type="Script" uid="uid://i45fbyw7w08n" path="res://Pieces/p_Action_Board/AddMaxWidthToChild.gd" id="4_klukk"]
 [ext_resource type="FontFile" uid="uid://c3b23cbo1gx6h" path="res://Pieces/p_Action_Board/Fonts/NimbusRomNo9L-MedIta.otf" id="5_klukk"]
 [ext_resource type="FontFile" uid="uid://bh70xeufwvef5" path="res://Pieces/p_Action_Board/Fonts/NimbusRomNo9L-Med.otf" id="6_tpbpg"]
 [ext_resource type="Script" uid="uid://dbap0gqox0ty1" path="res://addons/markdownlabel/markdownlabel.gd" id="7_4rlns"]
@@ -16,6 +17,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_iy4s5"]
 font_size = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_klukk"]
 
 [sub_resource type="Resource" id="Resource_wio2o"]
 resource_local_to_scene = true
@@ -88,7 +91,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_rm453")
 script = ExtResource("1_mbagx")
-is_full_text_visible = true
 
 [node name="clr2_BG" type="ColorRect" parent="."]
 layout_mode = 1
@@ -129,6 +131,7 @@ size_flags_vertical = 3
 
 [node name="svc2_Mini_Game" type="SubViewportContainer" parent="mgc2_Actions/vbc2_Actions/plc2_Actions"]
 layout_mode = 2
+stretch = true
 
 [node name="svp_Mini_Game" type="SubViewport" parent="mgc2_Actions/vbc2_Actions/plc2_Actions/svc2_Mini_Game"]
 handle_input_locally = false
@@ -139,15 +142,11 @@ render_target_update_mode = 4
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("4_klukk")
 
-[node name="mgc2_Full_Text" type="MarginContainer" parent="mgc2_Actions/vbc2_Actions/plc2_Full_Text"]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="rtl2_Full_Text" type="RichTextLabel" parent="mgc2_Actions/vbc2_Actions/plc2_Full_Text/mgc2_Full_Text"]
+[node name="rtl2_Full_Text" type="RichTextLabel" parent="mgc2_Actions/vbc2_Actions/plc2_Full_Text"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
 focus_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_4rlns")
@@ -158,7 +157,9 @@ theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_klukk")
 bbcode_enabled = true
+vertical_alignment = 1
 selection_enabled = true
 script = ExtResource("7_4rlns")
 h1 = SubResource("Resource_wio2o")
@@ -183,7 +184,8 @@ text = "Confirm"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "Full Text"
+toggle_mode = true
+text = "Play Game"
 
 [node name="btn2_Cancel" type="Button" parent="mgc2_Actions/vbc2_Actions/hbc2_Window_Controls"]
 layout_mode = 2

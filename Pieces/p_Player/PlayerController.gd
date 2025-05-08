@@ -47,6 +47,8 @@ func _set_camera_limits() -> void:
 	camera.limit_left = World.instance.l_limit
 
 func _input(event: InputEvent) -> void:
+	if MiniGames.is_active:
+		return
 	if event is InputEventKey || event is InputEventMouseMotion || event is InputEventMouseMotion:
 		is_controller = false
 	elif event is InputEventJoypadButton || event is InputEventJoypadMotion:

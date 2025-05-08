@@ -28,11 +28,11 @@ func _physics_process(_delta: float) -> void:
 	position = Vector2.ZERO
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ply_zm_in"):
+	if !MiniGames.is_active && Input.is_action_just_pressed("ply_zm_in"):
 		_zoom_in()
-	if Input.is_action_just_pressed("ply_zm_out"):
+	if !MiniGames.is_active && Input.is_action_just_pressed("ply_zm_out"):
 		_zoom_out()
-	if Input.is_action_just_pressed("ply_zm_reset"):
+	if !MiniGames.is_active && Input.is_action_just_pressed("ply_zm_reset"):
 		_zoom_reset()
 
 func _zoom_in() -> void:
