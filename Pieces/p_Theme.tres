@@ -1,0 +1,48 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://ditymelpyt263"]
+
+[ext_resource type="Texture2D" uid="uid://b2c0vpe7y61g3" path="res://Pieces/p_Action_Board/PanelHover.png" id="2_b8418"]
+[ext_resource type="StyleBox" uid="uid://bx4ql6cl65tn7" path="res://Pieces/p_Action_Board/PanelBG.tres" id="3_7r6l5"]
+[ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="4_x6sge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggoud"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mn6pm"]
+texture = ExtResource("2_b8418")
+texture_margin_left = 7.0
+texture_margin_top = 6.0
+texture_margin_right = 7.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o0c8j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b8418"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7r6l5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6sge"]
+
+[resource]
+default_font = ExtResource("4_x6sge")
+Button/styles/disabled = null
+Button/styles/focus = SubResource("StyleBoxFlat_ggoud")
+Button/styles/hover = SubResource("StyleBoxTexture_mn6pm")
+Button/styles/normal = ExtResource("3_7r6l5")
+Button/styles/pressed = null
+FlatButton/styles/disabled = SubResource("StyleBoxEmpty_o0c8j")
+FlatButton/styles/hover = SubResource("StyleBoxEmpty_b8418")
+FlatButton/styles/normal = SubResource("StyleBoxEmpty_7r6l5")
+FlatButton/styles/pressed = SubResource("StyleBoxEmpty_x6sge")
+Panel/styles/panel = ExtResource("3_7r6l5")
+PanelContainer/styles/panel = ExtResource("3_7r6l5")

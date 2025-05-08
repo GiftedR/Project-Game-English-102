@@ -15,7 +15,12 @@ signal modify_zoom(value:float)
 func _ready() -> void:
 	btn_zoom_in.button_up.connect(func() -> void: _zoom_in())
 	btn_zoom_reset.button_up.connect(func() -> void: _zoom_reset())
-	btn_zoom_out.button_up.connect(func() -> void: _zoom_reset())
+	btn_zoom_out.button_up.connect(func() -> void: _zoom_out())
+
+	modify_zoom.connect(
+		func(val:float)-> void:
+			btn_zoom_reset.text = str((PlayerController.instance.camera_zoom + val) as int) if val != 0 else str(4)
+	)
 
 
 func _physics_process(_delta: float) -> void:

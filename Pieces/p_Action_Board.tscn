@@ -1,10 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://byuk1bhvscowb"]
+[gd_scene load_steps=18 format=3 uid="uid://byuk1bhvscowb"]
 
-[ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="1_5gwtd"]
 [ext_resource type="Script" uid="uid://qt610ahban13" path="res://Pieces/p_Action_Board/ActionBoard.gd" id="1_mbagx"]
-[ext_resource type="Texture2D" uid="uid://cce5qtn30fjhl" path="res://Pieces/p_Action_Board/PanelFocus.png" id="2_mn6pm"]
-[ext_resource type="Texture2D" uid="uid://b2c0vpe7y61g3" path="res://Pieces/p_Action_Board/PanelHover.png" id="2_rshyw"]
-[ext_resource type="StyleBox" uid="uid://bx4ql6cl65tn7" path="res://Pieces/p_Action_Board/PanelBG.tres" id="2_x6w1m"]
+[ext_resource type="Theme" uid="uid://ditymelpyt263" path="res://Pieces/p_Theme.tres" id="1_rm453"]
 [ext_resource type="FontFile" uid="uid://caashfejeihkd" path="res://Pieces/p_Action_Board/times.ttf" id="6_iy4s5"]
 [ext_resource type="Script" uid="uid://dbap0gqox0ty1" path="res://addons/markdownlabel/markdownlabel.gd" id="7_4rlns"]
 [ext_resource type="Script" uid="uid://dcx7crs23nf4" path="res://addons/markdownlabel/header_formats/h1_format.gd" id="8_4k10d"]
@@ -13,30 +10,6 @@
 [ext_resource type="Script" uid="uid://bayuh2vafablg" path="res://addons/markdownlabel/header_formats/h4_format.gd" id="11_j8omo"]
 [ext_resource type="Script" uid="uid://dfr1w7u3jgni3" path="res://addons/markdownlabel/header_formats/h5_format.gd" id="12_2aoer"]
 [ext_resource type="Script" uid="uid://bsi6dexoofpe6" path="res://addons/markdownlabel/header_formats/h6_format.gd" id="13_k5sam"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iy4s5"]
-texture = ExtResource("2_mn6pm")
-texture_margin_left = 7.0
-texture_margin_top = 6.0
-texture_margin_right = 7.0
-texture_margin_bottom = 6.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mn6pm"]
-texture = ExtResource("2_rshyw")
-texture_margin_left = 7.0
-texture_margin_top = 6.0
-texture_margin_right = 7.0
-texture_margin_bottom = 6.0
-
-[sub_resource type="Theme" id="Theme_x6w1m"]
-default_font = ExtResource("1_5gwtd")
-Button/styles/disabled = null
-Button/styles/focus = SubResource("StyleBoxTexture_iy4s5")
-Button/styles/hover = SubResource("StyleBoxTexture_mn6pm")
-Button/styles/normal = ExtResource("2_x6w1m")
-Button/styles/pressed = null
-Panel/styles/panel = ExtResource("2_x6w1m")
-PanelContainer/styles/panel = ExtResource("2_x6w1m")
 
 [sub_resource type="LabelSettings" id="LabelSettings_iy4s5"]
 font_size = 32
@@ -110,7 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_x6w1m")
+theme = ExtResource("1_rm453")
 script = ExtResource("1_mbagx")
 is_full_text_visible = true
 

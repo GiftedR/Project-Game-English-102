@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://kvheax3uhhni"]
+[gd_scene load_steps=6 format=3 uid="uid://kvheax3uhhni"]
 
 [ext_resource type="PackedScene" uid="uid://dkxaxbtsolqbn" path="res://Pieces/p_Entity.tscn" id="1_a22na"]
 [ext_resource type="Script" uid="uid://hn42gu6v4rks" path="res://Pieces/p_Player/Player.gd" id="2_ms8ax"]
-[ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="3_dai5m"]
+[ext_resource type="Theme" uid="uid://ditymelpyt263" path="res://Pieces/p_Theme.tres" id="3_51do0"]
 [ext_resource type="Script" uid="uid://b0jsk145n24qb" path="res://Pieces/p_Player/ActionControls.gd" id="4_51do0"]
 [ext_resource type="Texture2D" uid="uid://dx4rkc3vnkqy0" path="res://Pieces/InputButtons.png" id="4_n3xbh"]
-
-[sub_resource type="Theme" id="Theme_n3xbh"]
-default_font = ExtResource("3_dai5m")
 
 [node name="chb2_Player" instance=ExtResource("1_a22na")]
 script = ExtResource("2_ms8ax")
@@ -30,7 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
 mouse_filter = 2
-theme = SubResource("Theme_n3xbh")
+theme = ExtResource("3_51do0")
 script = ExtResource("4_51do0")
 
 [node name="vbc2_Controls" type="VBoxContainer" parent="cvl2_Active_Controls/ctr2_Active_Controls" index="0"]

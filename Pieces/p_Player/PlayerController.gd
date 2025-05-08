@@ -1,9 +1,14 @@
 extends EntityController
 class_name PlayerController
 
+static var instance:PlayerController
+
 var camera:Camera2D = Camera2D.new()
 var is_controller:bool = true
 var camera_zoom:float = 4
+
+func _init() -> void:
+	instance = self
 
 func _enter_tree() -> void:
 	add_child(camera)
@@ -22,7 +27,7 @@ func _physics_process(_delta: float) -> void:
 	move_direction = Input.get_vector("ply_left", "ply_right", "ply_up", "ply_down")
 	is_sprinting = Input.get_action_strength("ply_sprint") > 0
 	is_interacting = Input.get_action_strength("ply_Interact") > 0
-	camera.zoom = Vector2(camera_zoom, camera_zoom)
+	camera.zoom = Vector2(camera_zoom, camera_zoom) if camera_zoom != 0 else Vector2.ONE
 
 func _set_camera_limits() -> void:
 	camera.limit_top = World.instance.t_limit
