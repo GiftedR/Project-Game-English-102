@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://caashfejeihkd"
-path="res://.godot/imported/times.ttf-dcd20a08adb7edad0977f3814b764270.fontdata"
+uid="uid://c2e2vav34pep5"
+path="res://.godot/imported/NimbusRomNo9L-RegIta.otf-ce2e08cfd328dde0379f25acc6d8480d.fontdata"
 
 [deps]
 
-source_file="res://Pieces/p_Action_Board/times.ttf"
-dest_files=["res://.godot/imported/times.ttf-dcd20a08adb7edad0977f3814b764270.fontdata"]
+source_file="res://Pieces/p_Action_Board/Fonts/NimbusRomNo9L-RegIta.otf"
+dest_files=["res://.godot/imported/NimbusRomNo9L-RegIta.otf-ce2e08cfd328dde0379f25acc6d8480d.fontdata"]
 
 [params]
 

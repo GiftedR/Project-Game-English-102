@@ -261,7 +261,8 @@ metadata/_edit_lock_ = true
 [node name="nde2_Intro" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
 position = Vector2(-40, 307)
 action_title = "Intro"
-action_body = "[indent]Test Thesis was a very cool thesis[/indent]"
+action_body = "
+		Games have always been a major source of entertainment in humans. From simple games like _Catch_, to more complex games like Baseball. Each game provides their own fun to people in differing ways. In schools, games are used as a fun way to help memorize details and help de-stress students from stressful school life. As time went on, things got more advanced. Now games of today prefer a digital medium, but it doesn’t seem like schools are taking advantage of the digital medium."
 full_text_only = true
 
 [node name="nde2_Thesis" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
