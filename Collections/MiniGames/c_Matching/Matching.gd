@@ -1,0 +1,2 @@
+extends MiniGames
+class_name Matching

@@ -15,7 +15,7 @@ Compatible with **Godot 4.2+**. Contains uid files for Godot 4.4+.
   - [Links](#links)
   - [Images](#images)
   - [Lists](#lists)
-    - [Task list items (checkboxes)](#task-list-items)
+	- [Task list items (checkboxes)](#task-list-items)
   - [Tables](#tables)
   - [Escaping characters](#escaping-characters)
   - [Advanced usage](#advanced-usage)
@@ -215,8 +215,8 @@ Example (run the ``example.tscn`` scene to test it):
 - [x] This is a checked item
   1. This is a nested regular list
   2. Here goes another nested task list:
-    - [ ] Task 1
-    - [ ] Task 2
+	- [ ] Task 1
+	- [ ] Task 2
 
 ### Tables
 

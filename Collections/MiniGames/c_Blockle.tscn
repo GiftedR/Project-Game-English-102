@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4nx711pms8fd"]
+
+[ext_resource type="Script" uid="uid://cy85478b2q0rm" path="res://Collections/MiniGames/c_Blockle/Blockle.gd" id="1_unkmb"]
+
+[node name="nde2_Blockle" type="Node2D"]
+script = ExtResource("1_unkmb")

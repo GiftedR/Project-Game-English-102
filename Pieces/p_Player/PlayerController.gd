@@ -4,7 +4,7 @@ class_name PlayerController
 static var instance:PlayerController
 
 var camera:Camera2D = Camera2D.new()
-var is_controller:bool = true
+var is_controller:bool = false
 var camera_zoom:float = 4
 
 const tp_locations:Array[Vector2i] = [

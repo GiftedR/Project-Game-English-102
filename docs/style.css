@@ -17,17 +17,26 @@ body
 	display: none;
 }
 
-.game
+main
+{
+	width: 80vw;
+	margin: 0 10vw;
+}
+
+.framewindow
 {
 	aspect-ratio: 16/9;
-	width: 100vw;
 	position: relative;
+	width: 100%;
+	display: block;
+	border: solid 1px var(--text-color);
+	border-radius: 0.25rem;
 }
 
 h1{
 	text-align: center;
 }
-.par
+/* .par
 {
 	aspect-ratio: 2/1;
 	text-align: center;
@@ -44,4 +53,4 @@ h1{
 .par:nth-child(odd)
 {
 	float:right;
-}
+} */

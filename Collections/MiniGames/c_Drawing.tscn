@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6ir4vmc3mk86"]
+
+[ext_resource type="Script" uid="uid://xguc67jxu24t" path="res://Collections/MiniGames/c_Drawing/Drawing.gd" id="1_unllm"]
+
+[node name="nde2_Drawing" type="Node2D"]
+script = ExtResource("1_unllm")

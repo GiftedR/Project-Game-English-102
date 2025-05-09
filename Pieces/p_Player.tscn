@@ -48,7 +48,7 @@ flat = true
 
 [node name="btn2_Zoom_Reset" type="Button" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Zoom" index="1"]
 layout_mode = 2
-text = "O"
+text = "4"
 flat = true
 
 [node name="btn2_Zoom_Out" type="Button" parent="cvl2_Active_Controls/ctr2_Active_Controls/vbc2_Controls/hbc2_Zoom" index="2"]
