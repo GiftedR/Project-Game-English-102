@@ -381,6 +381,7 @@ action_scene = ExtResource("8_05vmq")
 position = Vector2(-223, -424)
 action_title = "Argument 3"
 action_body = "		Furthermore, video games have been proven to be a good tool to [u]show problem solving skills[/u]. During an inquiry of the effects of student attitude towards math as a result of learning through video games. An observation was made. The observation says that, “Once they understood the concept of prime numbers, their actions were more purposeful and they advanced through the stage more quickly in successive attempts. Thus, an understanding of the math concepts became observable in their game play” (Gillispie 24). When building video games, one must learn a form of language that can be translated into something that can be run on the computer. This is called a programming language. A study called _The effect of simulation games on learning computer programming: A comparative study on high school students’ learning performance by assessing computational problem-solving strategies_ done by Pellas and Vosinakis shows that a substantial number of participants show problem solving skills in regards to the computational problems they were given (2448)."
+full_text_only = true
 full_text_visible = true
 action_scene = ExtResource("8_tn05v")
 

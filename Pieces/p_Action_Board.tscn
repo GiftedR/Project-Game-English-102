@@ -136,6 +136,7 @@ stretch = true
 [node name="svp_Mini_Game" type="SubViewport" parent="mgc2_Actions/vbc2_Actions/plc2_Actions/svc2_Mini_Game"]
 transparent_bg = true
 handle_input_locally = false
+physics_object_picking = true
 size = Vector2i(1250, 614)
 render_target_update_mode = 4
 
@@ -195,4 +196,4 @@ text = "Play Game"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "Cancel"
+text = "Close"

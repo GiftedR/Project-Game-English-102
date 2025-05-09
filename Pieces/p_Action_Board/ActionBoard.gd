@@ -43,14 +43,12 @@ func _update_texts() -> void:
 	rtl_full_text.markdown_text = full_text_content
 	lbl_action_title.text = title_text
 	btn2_full_text.visible = !full_text_only
-	btn2_Confirm.visible = !full_text_only
+	# btn2_Confirm.visible = !full_text_only
 	if full_text_only:
 		is_full_text_visible = true
-		btn2_Cancel.text = "Close"
-	else:
-		btn2_Cancel.text = "Cancel"
 	action_panel.visible = !is_full_text_visible
 	text_panel.visible = is_full_text_visible
+	btn2_Cancel.text = "Close"
 	
 func _update_properties() -> void:
 	_update_texts()

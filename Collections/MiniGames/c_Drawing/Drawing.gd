@@ -9,7 +9,6 @@ var active_tile:Vector2i = Vector2i.RIGHT
 func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 	if !is_active: return
-	print("DRAW!")
 	if active_tile.x > 7:
 		active_tile.x = 0
 		active_tile.y += 1
