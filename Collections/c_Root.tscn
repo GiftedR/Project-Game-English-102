@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0h8fdqhu1akt"]
+[gd_scene load_steps=3 format=3 uid="uid://d0h8fdqhu1akt"]
 
 [ext_resource type="Script" uid="uid://ctr2m6ablf3ya" path="res://Collections/c_Root/Root.gd" id="1_6usk6"]
+[ext_resource type="Script" uid="uid://bku0eyfkg7tei" path="res://Collections/c_Root/SubViewExpand.gd" id="2_6bbqb"]
 
 [node name="nde_Root" type="Node"]
 script = ExtResource("1_6usk6")
@@ -15,16 +16,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-stretch = true
 
 [node name="svp2_Gameplay" type="SubViewport" parent="cvl2_Gameplay/svc2_Gameplay"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 physics_object_picking = true
 size = Vector2i(1280, 720)
-size_2d_override = Vector2i(320, 180)
-size_2d_override_stretch = true
 render_target_update_mode = 4
+script = ExtResource("2_6bbqb")
 
 [node name="ctr2_Menus" type="Control" parent="cvl2_Gameplay"]
 layout_mode = 3

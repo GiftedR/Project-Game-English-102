@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://dg6sllsdkymt5"]
+
+[ext_resource type="Texture2D" uid="uid://gu3ehbevjckk" path="res://Collections/c_Root/icon.svg" id="1_2ir4h"]
+[ext_resource type="Script" uid="uid://dth4o5vc2n5xe" path="res://Collections/MiniGames/c_Matching/Card.gd" id="1_4f4mi"]
+[ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="2_l7uwu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7uwu"]
+bg_color = Color(0.211765, 0.239216, 0.321569, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.129412, 0.145098, 0.196078, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_4f4mi"]
+line_spacing = 0.0
+font = ExtResource("2_l7uwu")
+font_size = 112
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f4mi"]
+size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_4f4mi"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.498039, 0.988235, 0.498039, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bg0cp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bg0cp"]
+_data = {
+&"RESET": SubResource("Animation_bg0cp"),
+&"fade_in": SubResource("Animation_4f4mi")
+}
+
+[node name="ara2_Match_Card" type="Area2D"]
+script = ExtResource("1_4f4mi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2ir4h")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(128, 128)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -64.0
+offset_right = 40.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_l7uwu")
+
+[node name="lbl2_Card" type="Label" parent="PanelContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+text = "A"
+label_settings = SubResource("LabelSettings_4f4mi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cls2_Match_Card" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4f4mi")
+
+[node name="anp_fade_in" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bg0cp")
+}
+autoplay = "fade_in"

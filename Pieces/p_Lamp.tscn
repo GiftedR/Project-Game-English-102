@@ -28,10 +28,12 @@ region_enabled = true
 region_rect = Rect2(192, 848, 16, 48)
 
 [node name="plt2_Lamp" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(0, -23)
 color = Color(1, 0.964706, 0.929412, 1)
 energy = 0.6
 shadow_enabled = true
+shadow_filter = 2
 texture = SubResource("GradientTexture2D_u51vc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

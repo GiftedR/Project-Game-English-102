@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx5uy25tslcae"]
+
+[ext_resource type="Script" uid="uid://cu6ehgprcubpg" path="res://Collections/MiniGames/c_Typing_Game/TypingGame.gd" id="1_x3pav"]
+[ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="3_apgou"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_svnns"]
+font = ExtResource("3_apgou")
+font_size = 48
+
+[node name="nde2_Typing_Game" type="Node2D"]
+script = ExtResource("1_x3pav")
+
+[node name="cmr2_Game_Camera" type="Camera2D" parent="."]
+
+[node name="lne2_Type_Path" type="Line2D" parent="cmr2_Game_Camera"]
+points = PackedVector2Array(-2048, 0, 2048, 0)
+
+[node name="lbl2_Score" type="Label" parent="cmr2_Game_Camera"]
+texture_filter = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = -99.0
+offset_right = 105.0
+offset_bottom = -51.0
+grow_horizontal = 2
+text = "Score: "
+label_settings = SubResource("LabelSettings_svnns")
+
+[node name="nde2_World" type="Node2D" parent="."]

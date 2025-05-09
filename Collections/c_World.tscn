@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://hkrnyjxeexe2"]
+[gd_scene load_steps=20 format=4 uid="uid://hkrnyjxeexe2"]
 
 [ext_resource type="Script" uid="uid://d703afqsbbp7" path="res://Collections/c_World/World.gd" id="1_gfwas"]
 [ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="2_e8mge"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dqvffwm0xthv5" path="res://Collections/c_World/light_beam.png" id="3_5pccg"]
 [ext_resource type="Material" uid="uid://ddxemxlnq56kc" path="res://Collections/c_World/LightShaderMaterial.tres" id="4_5pccg"]
 [ext_resource type="PackedScene" uid="uid://b8ckws6n124ii" path="res://Pieces/p_Interact.tscn" id="4_gmhvb"]
+[ext_resource type="PackedScene" uid="uid://bx5uy25tslcae" path="res://Collections/MiniGames/c_Typing_Game.tscn" id="7_6j4hd"]
+[ext_resource type="PackedScene" uid="uid://b6ir4vmc3mk86" path="res://Collections/MiniGames/c_Drawing.tscn" id="8_05vmq"]
+[ext_resource type="PackedScene" uid="uid://b4nx711pms8fd" path="res://Collections/MiniGames/c_Blockle.tscn" id="8_tn05v"]
+[ext_resource type="PackedScene" uid="uid://6xk4c7uq8722" path="res://Collections/MiniGames/c_Matching.tscn" id="10_2bbu1"]
 
 [sub_resource type="Gradient" id="Gradient_gmhvb"]
 interpolation_mode = 2
@@ -38,6 +42,17 @@ fill_to = Vector2(0.5, 0)
 [sub_resource type="LabelSettings" id="LabelSettings_gmhvb"]
 font = ExtResource("2_e8mge")
 shadow_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="Gradient" id="Gradient_6j4hd"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 0, 0, 0.752941, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tn05v"]
+gradient = SubResource("Gradient_6j4hd")
+width = 96
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.504274)
 
 [node name="nde2_World" type="Node2D"]
 y_sort_enabled = true
@@ -80,25 +95,27 @@ occluder = SubResource("OccluderPolygon2D_gmhvb")
 [node name="tml2_Furniture" type="TileMapLayer" parent="nde2_Tiles"]
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD7/w0AAQABAEgAAAD7/w8AAQABAEoAAAD8/w4AAQACAEkAAAD9/w4AAQACAEkAAAD+/w4AAQADAEkAAAD+/w0AAQADAEgAAAD9/w0AAQACAEgAAAD8/w0AAQACAEgAAAD9/xAAAQADAEoAAAACAA4AAQAHAEgAAAADAA4AAQAIAEgAAAAEAA4AAQALADMAAAD9/xMAAQANACgAAAD9/xQAAQACACMAAAD9/xUAAQABACYAAAD8/wwAAQAKAEIAAAACAAwAAQAKAEIAAAAEABQAAQABAAMAAAADABQAAQABAAMAAAACABQAAQABAAMAAAABABQAAQABAAMAAAAAABQAAQAAAAMAAAAAABMAAQAAAAIAAAAAABIAAQAEAAQAAAAAABEAAQAAAAIAAAAAABAAAQAAAAAAAAABABAAAQABAAAAAAACABAAAQABAAAAAAADABAAAQAGAAcAAAAEABAAAQABAAAAAAACABIAAQAFABUAAAACABMAAQADAAMAAAD//wAAAQAKACgAAAACAAcAAQABACYAAAAEAAcAAQABACYAAAAEAAUAAQABACYAAAACAAUAAQABACYAAAACAAMAAQABACYAAAAEAAMAAQABACYAAAD7/wcAAQABACYAAAD7/wUAAQABACYAAAD7/wMAAQABACYAAAD9/wMAAQABACYAAAD9/wUAAQABACYAAAD9/wcAAQABACYAAAD7/wYAAQACACMAAAD7/wQAAQACACMAAAD9/wQAAQACACMAAAD9/wYAAQACACMAAAD9/wIAAQACACMAAAD7/wIAAQACACMAAAACAAYAAQACACMAAAAEAAYAAQACACMAAAAEAAQAAQACACMAAAACAAQAAQACACMAAAACAAIAAQACACMAAAAEAAIAAQACACMAAAD8//z/AQAAACkAAAADAPz/AQAIABYAAAD7/xcAAQAGAA0AAAA=")
+tile_map_data = PackedByteArray("AAD7/w0AAQABAEgAAAD7/w8AAQABAEoAAAD8/w4AAQACAEkAAAD9/w4AAQACAEkAAAD+/w4AAQADAEkAAAD+/w0AAQADAEgAAAD9/w0AAQACAEgAAAD8/w0AAQACAEgAAAD9/xAAAQADAEoAAAACAA4AAQAHAEgAAAADAA4AAQAIAEgAAAAEAA4AAQALADMAAAD9/xMAAQANACgAAAD9/xQAAQACACMAAAD9/xUAAQABACYAAAD8/wwAAQAKAEIAAAACAAwAAQAKAEIAAAAEABQAAQABAAMAAAADABQAAQABAAMAAAACABQAAQABAAMAAAABABQAAQABAAMAAAAAABQAAQAAAAMAAAAAABMAAQAAAAIAAAAAABIAAQAEAAQAAAAAABEAAQAAAAIAAAAAABAAAQAAAAAAAAABABAAAQABAAAAAAACABAAAQABAAAAAAADABAAAQAGAAcAAAAEABAAAQABAAAAAAACABIAAQAFABUAAAACABMAAQADAAMAAAD//wAAAQAKACgAAAACAAcAAQABACYAAAAEAAcAAQABACYAAAAEAAUAAQABACYAAAACAAUAAQABACYAAAACAAMAAQABACYAAAAEAAMAAQABACYAAAD7/wcAAQABACYAAAD7/wUAAQABACYAAAD7/wMAAQABACYAAAD9/wMAAQABACYAAAD9/wUAAQABACYAAAD9/wcAAQABACYAAAD7/wYAAQACACMAAAD7/wQAAQACACMAAAD9/wQAAQACACMAAAD9/wYAAQACACMAAAD9/wIAAQACACMAAAD7/wIAAQACACMAAAACAAYAAQACACMAAAAEAAYAAQACACMAAAAEAAQAAQACACMAAAACAAQAAQACACMAAAACAAIAAQACACMAAAAEAAIAAQACACMAAAD8//z/AQAAACkAAAADAPz/AQAIABYAAAD7/xcAAQAGAA0AAAD+/8n/AQAHADMAAAABAMn/AQAIADMAAAD//8n/AQAJADMAAAAAAMn/AQAJADMAAAANAPT/AQAKACgAAAANAOb/AQAKACgAAADx/+b/AQAKACgAAAD//9j/AQAKACgAAAD1//j/AQALACMAAAD1//L/AQALACMAAADu//L/AQAHACMAAADu//j/AQAHACMAAADv/+//AQANACYAAADz/+7/AQAKAEIAAADx//T/AQAKACgAAADz//j/AQACAAoAAADw//j/AQAAAAoAAAALAO//AQAFADsAAAALAPD/AQAFADwAAAAQAO//AQAFADsAAAAQAPD/AQAFADwAAAAKAPH/AQAIAEIAAAARAPH/AQAIAEIAAAANAO//AQADAEYAAAAOAO//AQADAEYAAADu/+L/AQAKAEcAAADw/+L/AQAOAEcAAADy/+L/AQAKAEQAAAD0/+L/AQAOAEQAAADu/+n/AQAMAEQAAADw/+n/AQAKAEQAAADy/+n/AQAMAEcAAAD0/+n/AQAOAEcAAADu/+b/AQALAEsAAAD1/+f/AQALAEsAAAD1/+r/AQALAEsAAADv/+v/AQALAEsAAADu/+P/AQALAEsAAAAKAOL/AQAHAEgAAAAMAOL/AQAHAEgAAAAOAOL/AQAHAEgAAAAQAOL/AQAHAEgAAAARAOL/AQAIAEgAAAAPAOL/AQAIAEgAAAANAOL/AQAIAEgAAAALAOL/AQAIAEgAAAALAOj/AQABAEgAAAAMAOj/AQACAEgAAAANAOj/AQACAEgAAAAOAOj/AQACAEgAAAAPAOj/AQACAEgAAAAQAOj/AQADAEgAAAAMAOn/AQACAEkAAAANAOn/AQACAEkAAAAOAOn/AQACAEkAAAAPAOn/AQACAEkAAAAQAOr/AQACAEoAAAALAOr/AQABAEoAAAD8/9T/AQAKAEcAAAACANT/AQAOAEcAAAAEANz/AQAHAFEAAAD7/9z/AQAJAFEAAAD7/9r/AQAJAFMAAAD7/9n/AQAJAFMAAAD7/9j/AQAJAFMAAAD7/9f/AQAJAFMAAAD7/9b/AQAJAFMAAAAEANr/AQAHAFMAAAAEANn/AQAHAFMAAAAEANj/AQAHAFMAAAAEANf/AQAHAFMAAAAEANb/AQAHAFMAAAD7/9X/AQAJAFAAAAAEANX/AQAHAFAAAAA=")
 tile_set = ExtResource("2_ic0yf")
 
 [node name="tml2_Decor" type="TileMapLayer" parent="nde2_Tiles"]
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD7/wIAAQANACQAAAACAAYAAQANACQAAAD9/wYAAQAPAAcAAAAEAAQAAQAPAAcAAAD7/wQAAQAAADQAAAD7/wYAAQAAADQAAAADAP//AQAAADQAAAD8/wEAAQANABwAAAAEABEAAQAMAAsAAAAEABIAAQALAAoAAAAAABEAAQABACgAAAD7/xcAAQAMAC0AAAA=")
+tile_map_data = PackedByteArray("AAD7/wIAAQANACQAAAACAAYAAQANACQAAAD9/wYAAQAPAAcAAAAEAAQAAQAPAAcAAAD7/wQAAQAAADQAAAD7/wYAAQAAADQAAAADAP//AQAAADQAAAD8/wEAAQANABwAAAAEABEAAQAMAAsAAAAEABIAAQALAAoAAAAAABEAAQABACgAAAD7/xcAAQAMAC0AAADv//X/AQAAADQAAAD+//T/AQAAADQAAAAAAPv/AQAAADQAAAD0//X/AQAAADQAAADy/+f/AQAAADQAAADu/+j/AQAAADQAAADz/+n/AQAAADQAAAD+/+b/AQAAADQAAAANAOb/AQAAADQAAAARAOv/AQAAADQAAAARAOT/AQAAADQAAAD//+b/AQAAADQAAAAAAPX/AQAAADQAAAAPAPf/AQAAADQAAAALAPj/AQAAADQAAAALAPH/AQAAADQAAAARAPX/AQAAADQAAAACANz/AQAAADQAAAD//9v/AQAAADQAAADw/+n/AQAAACgAAAAKAOv/AQAAACgAAAANAPb/AQAAACgAAADw//X/AQAAACgAAAD//+3/AQAAACgAAAAQAOf/AQANABwAAADu/+P/AQANABwAAAD9/9j/AQAAADQAAAACANb/AQAAADQAAAD+/9b/AQANABwAAAA=")
 tile_set = ExtResource("2_ic0yf")
 
 [node name="tml2_Lightage" type="TileMapLayer" parent="nde2_Tiles"]
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAABAA4AAgAAAAAAAgD7/xEAAgAAAAAAAgAEABcAAgAAAAAAAgD9//f/AgAAAAAAAgACAPf/AgAAAAAAAgACAPL/AgAAAAAAAgD9//L/AgAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAABAA4AAgAAAAAAAgD7/xEAAgAAAAAAAgAEABcAAgAAAAAAAgD9//f/AgAAAAAAAgACAPf/AgAAAAAAAgACAPL/AgAAAAAAAgD9//L/AgAAAAAAAgD2//D/AgAAAAAAAgD2//n/AgAAAAAAAgDt//n/AgAAAAAAAgDt//D/AgAAAAAAAgAJAPD/AgAAAAAAAgASAPD/AgAAAAAAAgAJAPn/AgAAAAAAAgASAPn/AgAAAAAAAgDt/+v/AgAAAAAAAgD2/+v/AgAAAAAAAgDt/+L/AgAAAAAAAgD2/+L/AgAAAAAAAgAJAOv/AgAAAAAAAgASAOv/AgAAAAAAAgAJAOL/AgAAAAAAAgASAOL/AgAAAAAAAgD9/+n/AgAAAAAAAgACAOn/AgAAAAAAAgD9/+T/AgAAAAAAAgACAOT/AgAAAAAAAgD7/93/AgAAAAAAAgAEAN3/AgAAAAAAAgD7/9T/AgAAAAAAAgAEANT/AgAAAAAAAgD7/83/AgAAAAAAAgAEAM3/AgAAAAAAAgAEAMT/AgAAAAAAAgD7/8T/AgAAAAAAAgA=")
 tile_set = ExtResource("2_ic0yf")
 
 [node name="cvl2_Darkness" type="CanvasModulate" parent="nde2_Tiles/tml2_Lightage"]
+visible = false
 color = Color(0.0941176, 0.141176, 0.25098, 1)
 
 [node name="plt2_Thesis" type="PointLight2D" parent="nde2_Tiles/tml2_Lightage"]
+visible = false
 position = Vector2(0.0587199, 198)
 rotation = -1.5708
 scale = Vector2(0.31747, 0.167962)
@@ -128,6 +145,7 @@ texture = ExtResource("3_5pccg")
 offset = Vector2(512, 0)
 
 [node name="plt_Hallway" type="PointLight2D" parent="nde2_Tiles/tml2_Lightage"]
+visible = false
 position = Vector2(-15, 176)
 energy = 0.75
 shadow_enabled = true
@@ -143,8 +161,8 @@ metadata/_edit_lock_ = true
 use_parent_material = true
 offset_left = -87.0
 offset_top = 192.0
-offset_right = 86.0
-offset_bottom = 389.0
+offset_right = 6.0
+offset_bottom = 296.0
 text = "Intro
 "
 label_settings = SubResource("LabelSettings_gmhvb")
@@ -172,11 +190,27 @@ offset_left = -160.0
 offset_top = -288.0
 offset_right = -32.0
 offset_bottom = -91.0
-text = "Paragraph 1"
+text = "Argument 1"
 label_settings = SubResource("LabelSettings_gmhvb")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/lbl2_Par-1"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
 
 [node name="lbl2_Par-2" type="Label" parent="nde2_Tiles/nde2_Labels"]
 material = ExtResource("4_5pccg")
@@ -185,11 +219,27 @@ offset_left = 32.0
 offset_top = -288.0
 offset_right = 160.0
 offset_bottom = -91.0
-text = "Paragraph 2"
+text = "Argument 2"
 label_settings = SubResource("LabelSettings_gmhvb")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/lbl2_Par-2"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
 
 [node name="lbl2_Par-3" type="Label" parent="nde2_Tiles/nde2_Labels"]
 material = ExtResource("4_5pccg")
@@ -198,11 +248,27 @@ offset_left = -160.0
 offset_top = -512.0
 offset_right = -32.0
 offset_bottom = -315.0
-text = "Paragraph 3"
+text = "Argument 3"
 label_settings = SubResource("LabelSettings_gmhvb")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/lbl2_Par-3"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
 
 [node name="lbl2_Par-4" type="Label" parent="nde2_Tiles/nde2_Labels"]
 material = ExtResource("4_5pccg")
@@ -211,27 +277,58 @@ offset_left = 32.0
 offset_top = -512.0
 offset_right = 160.0
 offset_bottom = -315.0
-text = "Paragraph 4"
+text = "Argument 4"
 label_settings = SubResource("LabelSettings_gmhvb")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/lbl2_Par-4"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
+
 [node name="lbl2_Conclusion" type="Label" parent="nde2_Tiles/nde2_Labels"]
 material = ExtResource("4_5pccg")
 use_parent_material = true
 offset_left = -87.0
-offset_top = -736.0
+offset_top = -543.0
 offset_right = 86.0
-offset_bottom = -539.0
+offset_bottom = -443.0
 text = "Conclusion"
 label_settings = SubResource("LabelSettings_gmhvb")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="txr2_Shadow" type="TextureRect" parent="nde2_Tiles/nde2_Labels/lbl2_Conclusion"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tn05v")
+
 [node name="lbl2_Works_Cited" type="Label" parent="nde2_Tiles/nde2_Labels"]
-visible = false
 material = ExtResource("4_5pccg")
 use_parent_material = true
 offset_left = -87.0
@@ -244,28 +341,97 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="rtl2_Works_Cited" type="RichTextLabel" parent="nde2_Tiles/nde2_Labels"]
-use_parent_material = true
-offset_left = -80.0
-offset_top = -986.0
-offset_right = 80.0
-offset_bottom = -800.0
-theme_override_fonts/normal_font = ExtResource("2_e8mge")
-bbcode_enabled = true
-text = "Works Cited
-Item"
-metadata/_edit_lock_ = true
-
 [node name="nde2_Interactions" type="Node2D" parent="nde2_Tiles"]
 
 [node name="nde2_Intro" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
 position = Vector2(-40, 307)
+action_title = "Intro"
+action_body = "		Games have always been a major source of entertainment in humans. From simple games like _Catch_, to more complex games like _Baseball_. Each game provides their own fun to people in differing ways. In schools, games are used as a fun way to help memorize details and help de-stress students from stressful school life. As time went on, things got more advanced. Now games of today prefer a digital medium, but it doesn’t seem like schools are taking advantage of the digital medium.
+
+_(Thesis in next room...)_"
+full_text_only = true
 
 [node name="nde2_Thesis" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
 position = Vector2(0, -3)
+action_title = "Thesis"
+action_body = "
+[p align=center]
+My thesis is:
+[font_size=48]
+	Video games need to be utilized more in schools as a tool for learning.
+[/font_size]
+[/p]"
+full_text_only = true
 
-[node name="drl2_Sun" type="DirectionalLight2D" parent="nde2_Tiles"]
+[node name="nde2_Par-1" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
+position = Vector2(-223, -200)
+action_title = "Argument 1"
+action_body = "        To begin with, video games have been shown by students to be a [u]fun tool for learning[/u]. Using video games for assisting in subjects allows students to gain an immediate form of feedback when they make mistakes. This also allows students to improve more rapidly and get more gratification when solving the previously challenging problems. In a paper titled _Effects of a 3-D Video Game on Middle School Student Achievement and Attitude in Mathematics_, Gillispie states, “Students were very willing to repeat missions in an attempt to improve their overall scores, thus drill-and-practice of the concepts occurred, but in a way in which students enjoyed and willingly embraced” (26). The increase in enjoyment and fun is not only limited to one type of game. It has also been shown to increase learning in other places. In another article titled _Commercial video games and cognitive functions: video game genres and modulating factors of cognitive enhancement_, Eunhye Choi states that video game players showed more motivation and brain improvement in relation to the amount of fun and stress those same video game players had (par. 6)."
+full_text_visible = true
+action_scene = ExtResource("7_6j4hd")
+
+[node name="nde2_Par-2" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
+position = Vector2(223, -200)
+action_title = "Argument 2"
+action_body = "        Next, video games have been used as a medium that [u]shows students creativity[/u]. It can either be in a very subtle way with things like the art that goes into the games, or it can be in more obvious ways with games like _Minecraft: Education Edition_. Some students can even benefit from games like _Minecraft_. A study involving the use of _Minecraft_ found that, “... the students were found to have either benefited from using Minecraft to develop creativity and depth of insight … or stayed steady” (Ellison 6). While _Minecraft_ is the biggest and most accessible form of creative gaming. There are also other cases of creativity appearing with regards to video games. In an article covering using video games as a mediator between students and creativity, researcher Fengyan Gao findings reveal that, “... there is a significant relationship between CGs [Computer Games] and CSE [Computer Self-Efficacy] and AE [Academic Engagement] with the mediating role of learners’ creativity” (14244)."
+full_text_visible = true
+action_scene = ExtResource("8_05vmq")
+
+[node name="nde2_Par-3" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
+position = Vector2(-223, -424)
+action_title = "Argument 3"
+action_body = "		Furthermore, video games have been proven to be a good tool to [u]show problem solving skills[/u]. During an inquiry of the effects of student attitude towards math as a result of learning through video games. An observation was made. The observation says that, “Once they understood the concept of prime numbers, their actions were more purposeful and they advanced through the stage more quickly in successive attempts. Thus, an understanding of the math concepts became observable in their game play” (Gillispie 24). When building video games, one must learn a form of language that can be translated into something that can be run on the computer. This is called a programming language. A study called _The effect of simulation games on learning computer programming: A comparative study on high school students’ learning performance by assessing computational problem-solving strategies_ done by Pellas and Vosinakis shows that a substantial number of participants show problem solving skills in regards to the computational problems they were given (2448)."
+full_text_only = true
+full_text_visible = true
+action_scene = ExtResource("8_tn05v")
+
+[node name="nde2_Par-4" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
+position = Vector2(223, -424)
+action_title = "Argument 4"
+action_body = "		Finally, video games have shown to [u]help increase focus[/u]. As was stated in an earlier paragraph, video games give immediate feedback. But how does this help focus? It helps by giving students something new to think about instead of focusing on the same subject for too long. The effect of video games on focus can already be seen in the professional gaming world. Choi states that differing levels of video game players show differing levels of allocation and sustaining of attention to subjects, with the higher level players showing higher cognitive abilities (par. 5). Focus can be found in other forms. The amount a student is focused and involved in the learning process is called Academic Engagement. In an earlier mentioned article by Fengyan Gao, it states, “It can be said with 95% confidence that there is a significant relationship between the two variables of CG [Computer Game] experience and the variable of AE [Academic Engagement]” (14241)."
+full_text_visible = true
+action_scene = ExtResource("10_2bbu1")
+
+[node name="nde2_Conclusion" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
+position = Vector2(0, -648)
+action_title = "Conclusion"
+action_body = "		Video games are very beneficial to teachers and students and should be used more. They are a great medium to express oneself, and to learn new things. Video games can also be fun in the process. In the last two decades, video games have exploded in popularity. Replacing movies as the number one source of entertainment. Do you believe school would have been more fun if games were the main source of learning?"
+full_text_only = true
+full_text_visible = true
+
+[node name="nde2_Works_Cited" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
+position = Vector2(0, -898)
+action_title = "Works Cited"
+action_body = "Choi, E., Shin, SH., Ryu, JK. et al. “Commercial video games and cognitive functions: video 
+		game genres and modulating factors of cognitive enhancement.” Behav Brain Funct 16, 2 
+		(2020). https://doi.org/10.1186/s12993-020-0165-z
+Ellison, Mark, and Christopher Drew. “Using Digital Sandbox Gaming to Improve Creativity 
+		Within Boys’ Writing.” Journal of Research in Childhood Education, vol. 34, no. 2, 2020, 
+		pp. 277–87, https://doi.org/10.1080/02568543.2019.1675823.
+Gao, Fengyan, and Siros Izadpanah. \"The Relationship between Computer Games and Computer 
+		Self-Efficacy with Academic Engagement: The Mediating Role of Students’ Creativity.\" 
+		Education and Information Technologies 28.11 (2023): 14229-48. ProQuest. Web. 8 May 2025.
+Gillispue, Lucas B. “EFFECTS OF A 3-D VIDEO GAME ON MIDDLE SCHOOL STUDENT 
+		ACHIEVEMENT AND ATTITUDE IN MATHEMATICS.” University of North Carolina 
+		Wilmington, 2008, 
+		<repository.uncw.edu/server/api/core/bitstreams/d05e7330-67a5-4563-ae88-7e5eaa046bad/content>.
+Pellas, Nikolaos, and Spyridon Vosinakis. “The Effect of Simulation Games on Learning 
+		Computer Programming: A Comparative Study on High School Students’ Learning 
+		Performance by Assessing Computational Problem-Solving Strategies.” Education and 
+		Information Technologies, vol. 23, no. 6, 2018, pp. 2423–52, 
+		<https://doi.org/10.1007/s10639-018-9724-4>."
+full_text_only = true
+full_text_visible = true
+
+[node name="drl2_Sun-Dark" type="DirectionalLight2D" parent="nde2_Tiles"]
 visible = false
 color = Color(0.772549, 0.772549, 0.686275, 1)
 blend_mode = 1
+height = 1.0
+
+[node name="cvl2_Recolor" type="CanvasModulate" parent="nde2_Tiles"]
+color = Color(0.733333, 0.733333, 0.733333, 1)
+
+[node name="drl2_Sun" type="DirectionalLight2D" parent="nde2_Tiles"]
+energy = 0.25
 height = 1.0

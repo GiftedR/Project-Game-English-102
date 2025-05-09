@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://s7pf8a3nxhnd"]
+
+[ext_resource type="Script" uid="uid://bjm8eaxiq6sf4" path="res://Collections/MiniGames/c_Typing_Game/TypeChallenge.gd" id="1_vma8c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apgou"]
+bg_color = Color(0.0196078, 0.0313726, 0.0784314, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[node name="nde2_Type" type="Node2D"]
+script = ExtResource("1_vma8c")
+
+[node name="plc2_Characters" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -24.0
+offset_right = 45.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_apgou")
