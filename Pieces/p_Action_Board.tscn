@@ -178,6 +178,7 @@ layout_mode = 2
 theme_override_constants/separation = 1
 
 [node name="btn2_Confirm" type="Button" parent="mgc2_Actions/vbc2_Actions/hbc2_Window_Controls"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32

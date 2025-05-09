@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://hkrnyjxeexe2"]
+[gd_scene load_steps=20 format=4 uid="uid://hkrnyjxeexe2"]
 
 [ext_resource type="Script" uid="uid://d703afqsbbp7" path="res://Collections/c_World/World.gd" id="1_gfwas"]
 [ext_resource type="FontFile" uid="uid://cutee4paxlogd" path="res://Pieces/Fonts.png" id="2_e8mge"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bx5uy25tslcae" path="res://Collections/MiniGames/c_Typing_Game.tscn" id="7_6j4hd"]
 [ext_resource type="PackedScene" uid="uid://b6ir4vmc3mk86" path="res://Collections/MiniGames/c_Drawing.tscn" id="8_05vmq"]
 [ext_resource type="PackedScene" uid="uid://b4nx711pms8fd" path="res://Collections/MiniGames/c_Blockle.tscn" id="8_tn05v"]
+[ext_resource type="PackedScene" uid="uid://6xk4c7uq8722" path="res://Collections/MiniGames/c_Matching.tscn" id="10_2bbu1"]
 
 [sub_resource type="Gradient" id="Gradient_gmhvb"]
 interpolation_mode = 2
@@ -388,6 +389,7 @@ position = Vector2(223, -424)
 action_title = "Argument 4"
 action_body = "		Finally, video games have shown to [u]help increase focus[/u]. As was stated in an earlier paragraph, video games give immediate feedback. But how does this help focus? It helps by giving students something new to think about instead of focusing on the same subject for too long. The effect of video games on focus can already be seen in the professional gaming world. Choi states that differing levels of video game players show differing levels of allocation and sustaining of attention to subjects, with the higher level players showing higher cognitive abilities (par. 5). Focus can be found in other forms. The amount a student is focused and involved in the learning process is called Academic Engagement. In an earlier mentioned article by Fengyan Gao, it states, “It can be said with 95% confidence that there is a significant relationship between the two variables of CG [Computer Game] experience and the variable of AE [Academic Engagement]” (14241)."
 full_text_visible = true
+action_scene = ExtResource("10_2bbu1")
 
 [node name="nde2_Conclusion" parent="nde2_Tiles/nde2_Interactions" instance=ExtResource("4_gmhvb")]
 position = Vector2(0, -648)
